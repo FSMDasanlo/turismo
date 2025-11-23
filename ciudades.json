@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "París",
+    "pais": "Francia",
+    "imagen_url": "imagenes/paris.jpg",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Tokio",
+    "pais": "Japón",
+    "imagen_url": "imagenes/tokio.jpg",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Liubliana",
+    "pais": "Eslovenia",
+    "imagen_url": "imagenes/liubliana.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Sidney",
+    "pais": "Australia",
+    "imagen_url": "imagenes/sidney.jpg",
+    "dificultad": "facil"
+  },
+    {
+    "nombre": "Madrid",
+    "pais": "España",
+    "imagen_url": "imagenes/madrid.jpg",
+    "dificultad": "facil"
+  }
+]

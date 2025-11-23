@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajar es Saber</title>
+    <!-- Enlazamos la nueva hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Pantalla de Inicio (visible por defecto) -->
+    <div id="pantalla-inicio" class="main-container">
+        <h1>Viajar es saber</h1>
+        <p class="descripcion">Pon a prueba tu conocimiento geográfico adivinando la ciudad que se muestra en la imagen.</p>
+        <button id="btn-iniciar-juego">Empezar a Jugar</button>
+    </div>
+
+    <div id="contenedor-juego" class="main-container hidden">
+        <!-- Contenedor 1: Cabecera -->
+        <header>
+            <h1>Viajar es saber</h1>
+            <p id="puntuacion">Puntuación: 0</p>
+        </header>
+
+        <!-- Contenedor 2: Imagen y pregunta -->
+        <div id="juego-container">
+            <!-- Botón para cerrar el juego y volver al inicio -->
+            <button id="btn-cerrar-juego">&times;</button>
+            <img id="imagen-ciudad" src="" alt="Adivina la ciudad">
+            <p class="pregunta">¿Qué ciudad es esta?</p>
+        </div>
+
+        <!-- Contenedor 3: Opciones -->
+        <div id="opciones-container">
+            <!-- Los botones se generarán con JavaScript -->
+        </div>
+
+        <div id="feedback-container">
+             <p id="feedback"></p>
+        </div>
+    </div>
+
+<!-- Conectamos el archivo JavaScript que contiene la lógica del juego -->
+<script src="juego.js"></script>
+
+</body>
+</html>

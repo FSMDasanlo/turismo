@@ -1,0 +1,158 @@
+/* Estilos generales */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal que centra todo */
+.main-container, #pantalla-inicio {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Estilos específicos para la pantalla de inicio */
+#pantalla-inicio .descripcion {
+    font-size: 1.2em;
+    color: #5f6368;
+    margin: 20px 0 30px;
+}
+
+#btn-iniciar-juego {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#btn-iniciar-juego:hover {
+    background-color: #185abc;
+}
+
+/* Contenedor del encabezado */
+header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #1a73e8; /* Un azul moderno */
+}
+
+#puntuacion {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #5f6368;
+}
+
+/* Contenedor de la imagen y la pregunta */
+#juego-container {
+    position: relative; /* Necesario para posicionar el botón de cerrar */
+    margin-bottom: 25px;
+}
+
+#imagen-ciudad {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.pregunta {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Estilo para el nuevo botón de cerrar */
+#btn-cerrar-juego {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 22px;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    padding: 0;
+}
+
+#btn-cerrar-juego:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Contenedor de los botones de opción */
+#opciones-container {
+    display: flex;
+    justify-content: center; /* Centra los botones en la fila */
+    flex-wrap: wrap; /* Permite que pasen a la siguiente línea si no caben */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#opciones-container button {
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#opciones-container button:hover {
+    background-color: #f5f5f5;
+    border-color: #1a73e8;
+    color: #1a73e8;
+}
+
+/* Contenedor para los mensajes de feedback */
+#feedback-container {
+    min-height: 30px; /* Para evitar que el layout salte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#feedback {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Clase de utilidad para ocultar elementos */
+.hidden {
+    display: none;
+}
