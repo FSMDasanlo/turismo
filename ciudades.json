@@ -28,5 +28,125 @@
     "pais": "España",
     "imagen_url": "imagenes/madrid.jpg",
     "dificultad": "facil"
+  },
+  {
+    "nombre": "Roma",
+    "pais": "Italia",
+    "imagen_url": "imagenes/roma.jpg",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Londres",
+    "pais": "Reino Unido",
+    "imagen_url": "imagenes/londres.jpg",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Nueva York",
+    "pais": "EE.UU.",
+    "imagen_url": "imagenes/nuevayork.jpg",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "El Cairo",
+    "pais": "Egipto",
+    "imagen_url": "imagenes/cairo.jpg",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Río de Janeiro",
+    "pais": "Brasil",
+    "imagen_url": "imagenes/rio.jpg",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Atenas",
+    "pais": "Grecia",
+    "imagen_url": "imagenes/atenas.jpg",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Pekín",
+    "pais": "China",
+    "imagen_url": "imagenes/pekin.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Moscú",
+    "pais": "Rusia",
+    "imagen_url": "imagenes/moscu.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Berlín",
+    "pais": "Alemania",
+    "imagen_url": "imagenes/berlin.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Ámsterdam",
+    "pais": "Países Bajos",
+    "imagen_url": "imagenes/amsterdam.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Praga",
+    "pais": "República Checa",
+    "imagen_url": "imagenes/praga.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Estambul",
+    "pais": "Turquía",
+    "imagen_url": "imagenes/estambul.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Dubái",
+    "pais": "Emiratos Árabes Unidos",
+    "imagen_url": "imagenes/dubai.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Bangkok",
+    "pais": "Tailandia",
+    "imagen_url": "imagenes/bangkok.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Seúl",
+    "pais": "Corea del Sur",
+    "imagen_url": "imagenes/seul.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Buenos Aires",
+    "pais": "Argentina",
+    "imagen_url": "imagenes/buenosaires.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Katmandú",
+    "pais": "Nepal",
+    "imagen_url": "imagenes/katmandu.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Reikiavik",
+    "pais": "Islandia",
+    "imagen_url": "imagenes/reikiavik.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Cusco",
+    "pais": "Perú",
+    "imagen_url": "imagenes/cusco.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Marrakech",
+    "pais": "Marruecos",
+    "imagen_url": "imagenes/marrakech.jpg",
+    "dificultad": "dificil"
   }
 ]
