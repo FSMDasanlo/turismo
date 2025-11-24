@@ -65,6 +65,72 @@
     "imagen_url": "imagenes/madrid6.jpg",
     "dificultad": "facil"
   },
+   {
+    "nombre": "Sevilla",
+    "pais": "España",
+    "imagen_url": "imagenes/sevilla.jpg",
+    "dificultad": "facil"
+  },
+   {
+    "nombre": "Salamanca",
+    "pais": "España",
+    "imagen_url": "imagenes/salamanca.jpg",
+    "dificultad": "facil"
+  },
+   {
+    "nombre": "Segovia",
+    "pais": "España",
+    "imagen_url": "imagenes/segovia.jpg",
+    "dificultad": "facil"
+  },
+   {
+    "nombre": "Valencia",
+    "pais": "España",
+    "imagen_url": "imagenes/valencia.jpg",
+    "dificultad": "facil"
+  },
+   {
+    "nombre": "Granada",
+    "pais": "España",
+    "imagen_url": "imagenes/granada.jpg",
+    "dificultad": "medio"
+  },
+   {
+    "nombre": "Segovia",
+    "pais": "España",
+    "imagen_url": "imagenes/segovia1.jpg",
+    "dificultad": "facil"
+  },
+   {
+    "nombre": "Barcelona",
+    "pais": "España",
+    "imagen_url": "imagenes/barcelona2.jpg",
+    "dificultad": "facil"
+  },
+   {
+    "nombre": "Sevilla",
+    "pais": "España",
+    "imagen_url": "imagenes/sevilla1.jpg",
+    "dificultad": "facil"
+  },
+   {
+    "nombre": "Sevilla",
+    "pais": "España",
+    "imagen_url": "imagenes/sevilla2.jpg",
+    "dificultad": "medio"
+  },
+   {
+    "nombre": "Córdoba",
+    "pais": "España",
+    "imagen_url": "imagenes/cordoba.jpg",
+    "dificultad": "medio"
+  },
+   {
+    "nombre": "Valencia",
+    "pais": "España",
+    "imagen_url": "imagenes/valencia1.jpg",
+    "dificultad": "medio"
+  },
   {
     "nombre": "Roma",
     "pais": "Italia",
