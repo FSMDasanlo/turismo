@@ -6,15 +6,19 @@
     <title>Viajar es Saber - Juego</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Contenedor de Jugadores */
-        .jugadores-container {
-            margin-bottom: 1.5rem;
+        /* Contenedor de Jugadores y su cabecera */
+        .jugadores-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem; /* Reducción agresiva */
         }
-        .jugadores-container h2 {
+        .jugadores-header h2 {
             font-size: 1.2rem;
             color: #5f6368;
             margin-bottom: 0.5rem;
             text-align: left;
+            margin: 0; /* Quitamos margen para alinear bien */
         }
         #lista-puntuaciones {
             list-style: none;
@@ -23,7 +27,7 @@
             flex-wrap: wrap;
             justify-content: flex-start;
             gap: 1rem;
-        }
+        } 
         #lista-puntuaciones li {
             background-color: #fff;
             padding: 0.5rem 1rem;
@@ -41,9 +45,9 @@
         /* Contenedor de Dificultad */
         .dificultad-container {
             background-color: #f8f9fa;
-            padding: 1rem;
+            padding: 0.5rem 1rem; /* Reducido padding vertical */
             border-radius: 8px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem; /* Reducción agresiva */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -52,19 +56,25 @@
             margin-right: 1rem;
             font-weight: 500;
         }
+        .opciones-dificultad {
+            display: flex;
+            flex-wrap: nowrap; /* Evita que salte de línea */
+            font-size: 0.9rem; /* Reduce un poco el tamaño de la fuente */
+            align-items: center;
+            justify-content: center;
+        }
 
         #contador-ronda {
-            background: linear-gradient(135deg, #ff6b6b, #f06595); /* Un gradiente llamativo */
-            color: white;
-            font-size: 1.2rem;
+            background-color: #e9ecef;
+            color: #5f6368;
+            font-size: 0.9rem;
             font-weight: bold;
             border-radius: 8px;
             padding: 0.5rem 1rem;
-            box-shadow: 0 4px 12px rgba(240, 101, 149, 0.4);
         }
 
         #contador-ronda span {
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             vertical-align: middle;
             margin-left: 0.5rem;
         }
@@ -72,13 +82,13 @@
         /* Contenedor de la Imagen */
         .imagen-container {
             position: relative;
-            min-height: 300px; /* Espacio reservado para la imagen */
+            min-height: 180px; /* Reducción agresiva */
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: #e9ecef;
             border-radius: 8px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem; /* Reducción agresiva */
         }
         #imagen-ciudad {
             display: none; /* Oculta la imagen por defecto para evitar el error 404 */
@@ -93,24 +103,26 @@
         </header>
 
         <!-- 1. Contenedor de Jugadores -->
-        <div class="jugadores-container">
+        <div class="jugadores-header">
             <h2>Puntuaciones</h2>
+            <div id="contador-ronda">Ronda <span id="numero-ronda">10</span></div>
+        </div>
+        <div class="jugadores-container">
             <ul id="lista-puntuaciones"></ul>
         </div>
         
         <!-- 2. Contenedor de Dificultad -->
         <div class="dificultad-container">
             <div class="opciones-dificultad">
-                <label><input type="radio" name="dificultad" value="facil" checked> Fácil (10 pts)</label>
-                <label><input type="radio" name="dificultad" value="medio"> Medio (20 pts)</label>
-                <label><input type="radio" name="dificultad" value="dificil"> Difícil (50 pts)</label>
+                <label><input type="radio" name="dificultad" value="facil" checked> Fácil (10)</label>
+                <label><input type="radio" name="dificultad" value="medio"> Medio (20)</label>
+                <label><input type="radio" name="dificultad" value="dificil"> Difícil (50)</label>
             </div>
-            <div id="contador-ronda">Ronda <span id="numero-ronda">10</span></div>
         </div>
         
         <!-- 3. Contenedor de Imagen y Botón -->
         <div class="imagen-container">
-            <img id="imagen-ciudad" src="imagenes/placeholder.png" alt="Adivina la ciudad">
+            <img id="imagen-ciudad" src="" alt="Adivina la ciudad">
             <button id="btn-mostrar-ciudad">Mostrar Ciudad</button>
         </div>
 

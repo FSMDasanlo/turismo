@@ -8,14 +8,14 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 20px;
+    padding: 10px; /* Reducido de 20px */
     box-sizing: border-box;
 }
 
 /* Contenedor principal que centra todo */
 .main-container, #pantalla-inicio {
     background-color: #ffffff;
-    padding: 30px;
+    padding: 10px 15px; /* Reducido padding vertical */
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -49,14 +49,14 @@ body {
 
 /* Contenedor del encabezado */
 header {
-    margin-bottom: 20px;
+    margin-bottom: 8px; /* Reducido */
     border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 20px;
+    padding-bottom: 8px; /* Reducido */
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 1.6em; /* Reducido */
     color: #1a73e8; /* Un azul moderno */
 }
 
@@ -70,17 +70,17 @@ header h1 {
 /* Contenedor de la imagen y la pregunta */
 #juego-container {
     position: relative; /* Necesario para posicionar el botón de cerrar */
-    margin-bottom: 25px;
+    margin-bottom: 8px; /* Reducido */
 }
 
 #imagen-ciudad {
     width: 100%;
     height: auto;
-    max-height: 400px;
+    max-height: 300px; /* Reducido de 400px */
     object-fit: cover;
     border-radius: 8px;
     border: 1px solid #ddd;
-    margin-bottom: 15px;
+    margin-bottom: 8px; /* Reducido */
 }
 
 .pregunta {
@@ -117,13 +117,13 @@ header h1 {
     display: flex;
     justify-content: center; /* Centra los botones en la fila */
     flex-wrap: wrap; /* Permite que pasen a la siguiente línea si no caben */
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 5px; /* Reducido */
+    margin-bottom: 8px; /* Reducido */
 }
 
 #opciones-container button {
-    padding: 15px;
-    font-size: 1.1em;
+    padding: 8px 10px; /* Reducido padding vertical */
+    font-size: 1.0em; /* Reducido de 1.1em */
     font-weight: 500;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -140,7 +140,7 @@ header h1 {
 
 /* Contenedor para los mensajes de feedback */
 #feedback-container {
-    min-height: 30px; /* Para evitar que el layout salte */
+    min-height: 18px; /* Reducido */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,4 +164,61 @@ header h1 {
 /* Clase de utilidad para ocultar elementos */
 .hidden {
     display: none;
+}
+
+/* --- ESTILOS RESPONSIVE PARA MÓVILES --- */
+/* Estos estilos se aplican solo si la pantalla tiene 600px de ancho o menos */
+@media (max-width: 600px) {
+    /* Ajustamos el contenedor principal para que no pegue a los bordes */
+    body {
+        padding: 10px;
+    }
+
+    /* Reducimos el título de Puntuaciones en móvil */
+    .jugadores-header h2 {
+        font-size: 1.0rem !important; /* Reducimos el tamaño y usamos !important para asegurar que se aplique */
+    }
+
+    /* Reducimos el contador de ronda en móvil */
+    #contador-ronda {
+        padding: 0.3rem 0.6rem !important;
+        font-size: 0.8rem !important;
+    }
+    #contador-ronda span {
+        font-size: 1.1rem !important;
+    }
+
+    /* Reducimos el espacio de la lista de puntuaciones */
+    #lista-puntuaciones {
+        gap: 0.5rem !important; /* Menos espacio entre jugadores */
+    }
+
+    /* 1. Contenedor de dificultad: apilamos todo verticalmente */
+    .dificultad-container {
+        flex-direction: column;
+        gap: 1rem; /* Espacio entre las opciones y el contador de ronda */
+        align-items: stretch; /* Hacemos que el contador ocupe todo el ancho */
+    }
+    .opciones-dificultad {
+        /* Forzamos a que se mantenga en una línea y reducimos el tamaño */
+        font-size: 0.8rem;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+    /* 2. Botones de respuesta: los ponemos en columna */
+    #opciones-container {
+        flex-direction: column;
+        /* Override previous column direction and force single row */
+        flex-direction: row;
+        flex-wrap: nowrap; /* Crucial: evita que los botones salten de línea */
+        gap: 5px; /* Reduce el espacio entre botones */
+        justify-content: space-around; /* Distribuye el espacio si sobra */
+    }
+    #opciones-container button {
+        font-size: 0.7em; /* Reduce el tamaño de la fuente */
+        padding: 8px 5px; /* Reduce el padding para que quepan */
+        white-space: nowrap; /* Evita que el texto se rompa dentro del botón */
+        flex-shrink: 1; /* Permite que los botones se encojan si es necesario */
+        min-width: 0; /* Permite que el contenido se desborde si no hay espacio */
+    }
 }

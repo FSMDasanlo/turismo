@@ -86,10 +86,24 @@ document.addEventListener('DOMContentLoaded', async () => {
         ciudadActual = ciudadesDisponibles[Math.floor(Math.random() * ciudadesDisponibles.length)];
         ciudadesMostradas.push(ciudadActual.nombre);
 
+        // --- LÓGICA MEJORADA PARA LAS OPCIONES ---
+        // 1. Crear un "pool" de opciones incorrectas de la MISMA dificultad.
+        const poolOpcionesIncorrectas = ciudades.filter(c => 
+            c.dificultad === dificultadSeleccionada && c.nombre !== ciudadActual.nombre
+        );
+
+        // 2. Comprobar si hay suficientes ciudades en esa dificultad para crear el juego.
+        if (poolOpcionesIncorrectas.length < 2) {
+            alert(`No hay suficientes ciudades en la dificultad "${dificultadSeleccionada}" para generar un juego justo. Se necesitan al menos 3. Por favor, añade más ciudades o elige otra dificultad.`);
+            prepararRonda(); // Volver a la preparación de ronda
+            return;
+        }
+
+        // 3. Elegir las opciones incorrectas de ese "pool".
         const opciones = [ciudadActual];
         while (opciones.length < 3) {
-            const opcionAleatoria = ciudades[Math.floor(Math.random() * ciudades.length)];
-            if (!opciones.some(opt => opt.nombre === opcionAleatoria.nombre)) {
+            const opcionAleatoria = poolOpcionesIncorrectas[Math.floor(Math.random() * poolOpcionesIncorrectas.length)];
+            if (!opciones.some(opt => opt.nombre === opcionAleatoria.nombre)) { // Evitar duplicados
                 opciones.push(opcionAleatoria);
             }
         }

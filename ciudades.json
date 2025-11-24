@@ -29,6 +29,42 @@
     "imagen_url": "imagenes/madrid.jpg",
     "dificultad": "facil"
   },
+     {
+    "nombre": "Madrid",
+    "pais": "España",
+    "imagen_url": "imagenes/madrid1.jpg",
+    "dificultad": "facil"
+  },
+     {
+    "nombre": "Madrid",
+    "pais": "España",
+    "imagen_url": "imagenes/madrid2.jpg",
+    "dificultad": "facil"
+  },
+     {
+    "nombre": "Madrid",
+    "pais": "España",
+    "imagen_url": "imagenes/madrid3.jpg",
+    "dificultad": "facil"
+  },
+     {
+    "nombre": "Madrid",
+    "pais": "España",
+    "imagen_url": "imagenes/madrid4.jpg",
+    "dificultad": "facil"
+  },
+     {
+    "nombre": "Madrid",
+    "pais": "España",
+    "imagen_url": "imagenes/madrid5.jpg",
+    "dificultad": "facil"
+  },
+     {
+    "nombre": "Madrid",
+    "pais": "España",
+    "imagen_url": "imagenes/madrid6.jpg",
+    "dificultad": "facil"
+  },
   {
     "nombre": "Roma",
     "pais": "Italia",
@@ -50,7 +86,7 @@
   {
     "nombre": "El Cairo",
     "pais": "Egipto",
-    "imagen_url": "imagenes/elcairo.jpg",
+    "imagen_url": "imagenes/cairo.jpg",
     "dificultad": "facil"
   },
   {
@@ -248,6 +284,66 @@
     "nombre": "Lhasa",
     "pais": "China",
     "imagen_url": "imagenes/lhasa.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Petra",
+    "pais": "Jordania",
+    "imagen_url": "imagenes/petra.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Angkor Wat",
+    "pais": "Camboya",
+    "imagen_url": "imagenes/angkorwat.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Valletta",
+    "pais": "Malta",
+    "imagen_url": "imagenes/valletta.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Timbuktu",
+    "pais": "Mali",
+    "imagen_url": "imagenes/timbuktu.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Samarcanda",
+    "pais": "Uzbekistán",
+    "imagen_url": "imagenes/samarcanda.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Bagan",
+    "pais": "Myanmar",
+    "imagen_url": "imagenes/bagan.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Dubrovnik",
+    "pais": "Croacia",
+    "imagen_url": "imagenes/dubrovnik.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Zanzíbar",
+    "pais": "Tanzania",
+    "imagen_url": "imagenes/zanzibar.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Quito",
+    "pais": "Ecuador",
+    "imagen_url": "imagenes/quito.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Luang Prabang",
+    "pais": "Laos",
+    "imagen_url": "imagenes/luangprabang.jpg",
     "dificultad": "dificil"
   }
 ]
