@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajar es Saber - Juego</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Contenedor de Jugadores */
+        .jugadores-container {
+            margin-bottom: 1.5rem;
+        }
+        .jugadores-container h2 {
+            font-size: 1.2rem;
+            color: #5f6368;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+        #lista-puntuaciones {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 1rem;
+        }
+        #lista-puntuaciones li {
+            background-color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-weight: bold;
+            border: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        #lista-puntuaciones li.activo {
+            border-color: #1a73e8;
+            transform: scale(1.05);
+        }
+
+        /* Contenedor de Dificultad */
+        .dificultad-container {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .opciones-dificultad label {
+            margin-right: 1rem;
+            font-weight: 500;
+        }
+
+        #contador-ronda {
+            background: linear-gradient(135deg, #ff6b6b, #f06595); /* Un gradiente llamativo */
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            box-shadow: 0 4px 12px rgba(240, 101, 149, 0.4);
+        }
+
+        #contador-ronda span {
+            font-size: 1.8rem;
+            vertical-align: middle;
+            margin-left: 0.5rem;
+        }
+
+        /* Contenedor de la Imagen */
+        .imagen-container {
+            position: relative;
+            min-height: 300px; /* Espacio reservado para la imagen */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        #imagen-ciudad {
+            display: none; /* Oculta la imagen por defecto para evitar el error 404 */
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor-juego" class="main-container">
+        <header>
+            <h1>Viajar es saber</h1>
+            <button id="btn-cerrar-juego" onclick="window.location.href='index.html'">&times;</button>
+        </header>
+
+        <!-- 1. Contenedor de Jugadores -->
+        <div class="jugadores-container">
+            <h2>Puntuaciones</h2>
+            <ul id="lista-puntuaciones"></ul>
+        </div>
+        
+        <!-- 2. Contenedor de Dificultad -->
+        <div class="dificultad-container">
+            <div class="opciones-dificultad">
+                <label><input type="radio" name="dificultad" value="facil" checked> Fácil (10 pts)</label>
+                <label><input type="radio" name="dificultad" value="medio"> Medio (20 pts)</label>
+                <label><input type="radio" name="dificultad" value="dificil"> Difícil (50 pts)</label>
+            </div>
+            <div id="contador-ronda">Ronda <span id="numero-ronda">10</span></div>
+        </div>
+        
+        <!-- 3. Contenedor de Imagen y Botón -->
+        <div class="imagen-container">
+            <img id="imagen-ciudad" src="imagenes/placeholder.png" alt="Adivina la ciudad">
+            <button id="btn-mostrar-ciudad">Mostrar Ciudad</button>
+        </div>
+
+        <div id="opciones-container">
+            <!-- Las opciones de respuesta se generan aquí -->
+        </div>
+
+        <div id="feedback-container">
+            <!-- El feedback (Correcto/Incorrecto) se mostrará aquí -->
+        </div>
+    </div>
+
+    <script src="juego.js"></script>
+</body>
+</html>

@@ -21,6 +21,7 @@ body {
     width: 100%;
     max-width: 600px;
     text-align: center;
+    position: relative; /* Clave para posicionar el botón de cierre correctamente */
 }
 
 /* Estilos específicos para la pantalla de inicio */
@@ -150,6 +151,14 @@ header h1 {
     font-weight: bold;
     padding: 10px;
     border-radius: 5px;
+}
+
+/* Estilo para el botón cuando pide mostrar la ciudad */
+.btn-mostrar-ciudad {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 12px 25px;
 }
 
 /* Clase de utilidad para ocultar elementos */

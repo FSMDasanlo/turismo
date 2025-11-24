@@ -50,7 +50,7 @@
   {
     "nombre": "El Cairo",
     "pais": "Egipto",
-    "imagen_url": "imagenes/cairo.jpg",
+    "imagen_url": "imagenes/elcairo.jpg",
     "dificultad": "facil"
   },
   {
@@ -69,7 +69,7 @@
     "nombre": "Pekín",
     "pais": "China",
     "imagen_url": "imagenes/pekin.jpg",
-    "dificultad": "medio"
+    "dificultad": "facil"
   },
   {
     "nombre": "Moscú",
@@ -147,6 +147,107 @@
     "nombre": "Marrakech",
     "pais": "Marruecos",
     "imagen_url": "imagenes/marrakech.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Astorga",
+    "pais": "España",
+    "imagen_url": "imagenes/astorga.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Traid",
+    "pais": "España",
+    "imagen_url": "imagenes/traid.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Astorga",
+    "pais": "España",
+    "imagen_url": "imagenes/astorga1.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Traid",
+    "pais": "España",
+    "imagen_url": "imagenes/traid1.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Kyoto",
+    "pais": "Japón",
+    "imagen_url": "imagenes/kyoto.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Venecia",
+    "pais": "Italia",
+    "imagen_url": "imagenes/venecia.jpg",
+    "dificultad": "facil"
+  },
+    {
+    "nombre": "Venecia",
+    "pais": "Italia",
+    "imagen_url": "imagenes/venecia1.jpg",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "San Francisco",
+    "pais": "EE.UU.",
+    "imagen_url": "imagenes/sanfrancisco.jpg",
+    "dificultad": "facil"
+  },
+    {
+    "nombre": "San Francisco",
+    "pais": "EE.UU.",
+    "imagen_url": "imagenes/sanfrancisco1.jpg",
+    "dificultad": "facil"
+  },  {
+    "nombre": "San Francisco",
+    "pais": "EE.UU.",
+    "imagen_url": "imagenes/sanfrancisco2.jpg",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Singapur",
+    "pais": "Singapur",
+    "imagen_url": "imagenes/singapur.jpg",
+    "dificultad": "medio"
+  },
+    {
+    "nombre": "Singapur",
+    "pais": "Singapur",
+    "imagen_url": "imagenes/singapur1.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Ciudad del Cabo",
+    "pais": "Sudáfrica",
+    "imagen_url": "imagenes/ciudaddelcabo.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Helsinki",
+    "pais": "Finlandia",
+    "imagen_url": "imagenes/helsinki.jpg",
+    "dificultad": "dificil"
+  },
+    {
+    "nombre": "Helsinki",
+    "pais": "Finlandia",
+    "imagen_url": "imagenes/helsinki1.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Ushuaia",
+    "pais": "Argentina",
+    "imagen_url": "imagenes/ushuaia.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Lhasa",
+    "pais": "China",
+    "imagen_url": "imagenes/lhasa.jpg",
     "dificultad": "dificil"
   }
 ]

@@ -1,48 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viajar es Saber</title>
-    <!-- Enlazamos la nueva hoja de estilos -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Jugadores - Viajar es Saber</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilos específicos para la página de gestión de jugadores */
+    body.gestion {
+      background: url('imagenes/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    .header-container {
+      background: linear-gradient(135deg, #1a73e8, #0d47a1);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      width: 100%;
+      max-width: 500px;
+      padding: 1rem 2rem;
+      box-sizing: border-box;
+      text-align: center;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .header-container h1 {
+      font-size: 2.2rem;
+      margin: 0;
+      color: white; /* Asegura que el texto del título sea blanco */
+    }
+
+    .contenedor-gestion {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      width: 100%;
+      max-width: 500px;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+
+    .card-jugadores {
+      min-height: 100px; /* Asegura que el contenedor tenga espacio aunque esté vacío */
+      padding: 0.5rem;
+      border: 1px dashed #ccc;
+      border-radius: 8px;
+    }
+    .lista-jugadores li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e0e0e0;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .borrar-jugador {
+      background: none;
+      border: none;
+      color: #aaa;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .borrar-jugador:hover { color: #d9534f; }
+
+    .agregar-jugador {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .agregar-jugador input {
+      flex-grow: 1;
+      padding: 0.7rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .btn-accion {
+      padding: 0.7rem;
+      font-size: 1.2rem;
+      line-height: 1;
+      border-radius: 6px;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .btn-add { background-color: #4CAF50; }
+    .btn-add:hover { background-color: #45a049; }
+
+    .botones-finales {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .botones-finales button {
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .botones-finales button:hover { transform: scale(1.05); }
+    .botones-finales .jugar { background-color: #28a745; color: white; }
+
+  </style>
 </head>
-<body>
+<body class="gestion">
+  <header class="header-container">
+    <h1>Viajar es Saber</h1>
+  </header>
 
-    <!-- Pantalla de Inicio (visible por defecto) -->
-    <div id="pantalla-inicio" class="main-container">
-        <h1>Viajar es saber</h1>
-        <p class="descripcion">Pon a prueba tu conocimiento geográfico adivinando la ciudad que se muestra en la imagen.</p>
-        <button id="btn-iniciar-juego">Empezar a Jugar</button>
+  <main class="contenedor-gestion">
+    <div class="agregar-jugador">
+      <input type="text" id="nombre-jugador" placeholder="Añadir nuevo jugador..." onkeypress="if(event.key==='Enter') agregarJugador()">
+      <button class="btn-accion btn-add" onclick="agregarJugador()" title="Añadir jugador">➕</button>
     </div>
 
-    <div id="contenedor-juego" class="main-container hidden">
-        <!-- Contenedor 1: Cabecera -->
-        <header>
-            <h1>Viajar es saber</h1>
-            <p id="puntuacion">Puntuación: 0</p>
-        </header>
-
-        <!-- Contenedor 2: Imagen y pregunta -->
-        <div id="juego-container">
-            <!-- Botón para cerrar el juego y volver al inicio -->
-            <button id="btn-cerrar-juego">&times;</button>
-            <img id="imagen-ciudad" src="" alt="Adivina la ciudad">
-            <p class="pregunta">¿Qué ciudad es esta?</p>
-        </div>
-
-        <!-- Contenedor 3: Opciones -->
-        <div id="opciones-container">
-            <!-- Los botones se generarán con JavaScript -->
-        </div>
-
-        <div id="feedback-container">
-             <p id="feedback"></p>
-        </div>
+    <div class="card-jugadores">
+      <ul id="lista-jugadores" class="lista-jugadores"></ul>
     </div>
 
-<!-- Conectamos el archivo JavaScript que contiene la lógica del juego -->
-<script src="juego.js"></script>
+    <div class="botones-finales">
+      <button class="jugar" onclick="irAlJuego()">▶ Jugar</button>
+    </div>
+  </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        cargarJugadores();
+    });
 
+    function agregarJugador() {
+        const input = document.getElementById('nombre-jugador');
+        const nombre = input.value.trim();
+
+        if (nombre) {
+            let jugadores = JSON.parse(localStorage.getItem('jugadores')) || [];
+            
+            // Evitar duplicados
+            if (jugadores.some(j => j.nombre.toLowerCase() === nombre.toLowerCase())) {
+                alert('Este jugador ya ha sido añadido.');
+                return;
+            }
+
+            jugadores.push({ nombre: nombre, puntuacion: 0 });
+            localStorage.setItem('jugadores', JSON.stringify(jugadores));
+            input.value = '';
+            cargarJugadores();
+        }
+    }
+
+    function cargarJugadores() {
+        const lista = document.getElementById('lista-jugadores');
+        const jugadores = JSON.parse(localStorage.getItem('jugadores')) || [];
+        lista.innerHTML = '';
+
+        if (jugadores.length === 0) {
+            lista.innerHTML = '<p style="text-align: center; color: #888;">Aún no hay jugadores.</p>';
+            return;
+        }
+
+        jugadores.forEach((jugador, index) => {
+            const li = document.createElement('li');
+            
+            const spanNombre = document.createElement('span');
+            spanNombre.textContent = jugador.nombre;
+            
+            const btnBorrar = document.createElement('button');
+            btnBorrar.textContent = '×';
+            btnBorrar.className = 'borrar-jugador';
+            btnBorrar.title = 'Eliminar jugador';
+            btnBorrar.onclick = () => borrarJugador(index);
+
+            li.appendChild(spanNombre);
+            li.appendChild(btnBorrar);
+            lista.appendChild(li);
+        });
+    }
+
+    function borrarJugador(index) {
+        let jugadores = JSON.parse(localStorage.getItem('jugadores')) || [];
+        jugadores.splice(index, 1);
+        localStorage.setItem('jugadores', JSON.stringify(jugadores));
+        cargarJugadores();
+    }
+
+    // Lógica para ir al juego
+    function irAlJuego() {
+      const jugadores = JSON.parse(localStorage.getItem('jugadores')) || [];
+      if (jugadores.length < 1) {
+        alert('Debes añadir al menos un jugador para empezar.');
+        return;
+      }
+      window.location.href = 'juego.html';
+    }
+  </script>
 </body>
+
 </html>

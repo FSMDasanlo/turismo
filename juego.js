@@ -1,98 +1,200 @@
-// juego.js
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     // Elementos del DOM
-    const pantallaInicio = document.getElementById('pantalla-inicio');
     const contenedorJuego = document.getElementById('contenedor-juego');
-    const btnIniciarJuego = document.getElementById('btn-iniciar-juego');
-    const btnCerrarJuego = document.getElementById('btn-cerrar-juego');
-
-    const puntuacionEl = document.getElementById('puntuacion');
-    const imagenEl = document.getElementById('imagen-ciudad');
+    const imagenCiudad = document.getElementById('imagen-ciudad');
     const opcionesContainer = document.getElementById('opciones-container');
-    const feedbackEl = document.getElementById('feedback');
+    const feedbackContainer = document.getElementById('feedback-container');
+    const radiosDificultad = document.querySelectorAll('input[name="dificultad"]');
+    const btnMostrarCiudad = document.getElementById('btn-mostrar-ciudad');
+    const listaPuntuacionesEl = document.getElementById('lista-puntuaciones');
 
-
+    // Estado del juego
     let ciudades = [];
-    let ciudadCorrecta = null;
-    let puntuacion = 0;
+    let ciudadActual = null;
+    let ciudadesMostradas = [];
+    let jugadores = [];
+    let jugadorActualIndex = 0;
+    let rondasRestantes = 10;
 
-    // 1. Cargar los datos e iniciar el juego
-    async function iniciarJuego() {
+    // --- INICIALIZACIÓN ---
+    
+    // Carga los datos de las ciudades
+    try {
         const response = await fetch('ciudades.json');
         ciudades = await response.json();
-        puntuacion = 0;
-        actualizarPuntuacion(0);
-        siguienteRonda();
+    } catch (error) {
+        console.error('Error al cargar las ciudades:', error);
+        alert('No se pudieron cargar los datos del juego. Inténtalo de nuevo.');
+        return;
+    }
+    
+    // Carga los jugadores y prepara la interfaz
+    cargarJugadores();
+    prepararRonda();
+
+    // --- LÓGICA DEL JUEGO ---
+
+    function cargarJugadores() {
+        jugadores = JSON.parse(localStorage.getItem('jugadores')) || [];
+        if (jugadores.length === 0) {
+            alert('No se han encontrado jugadores. Por favor, añádelos para empezar.');
+            window.location.href = 'index.html';
+            return;
+        }
+        // ¡LA SOLUCIÓN CLAVE!
+        // Reiniciamos las puntuaciones a 0 al comenzar una nueva partida.
+        jugadores.forEach(jugador => {
+            jugador.puntuacion = 0;
+        });
+
+        jugadorActualIndex = 0; // Empezamos con el primer jugador
+        actualizarDisplayPuntuaciones();
     }
 
-    // 2. Lógica de una ronda
-    function siguienteRonda() {
-        feedbackEl.textContent = '';
-        feedbackEl.style.backgroundColor = 'transparent';
+    function prepararRonda() {
+        // Restablecer la interfaz para una nueva pregunta
+        opcionesContainer.innerHTML = '';
+        feedbackContainer.innerHTML = '';
+        
+        imagenCiudad.style.display = 'none'; // Ocultar imagen
+        btnMostrarCiudad.style.display = 'block'; // Mostrar botón
 
-        opcionesContainer.innerHTML = ''; // Limpiar botones anteriores
+        // Habilitar selección de dificultad
+        radiosDificultad.forEach(radio => radio.disabled = false);
+    }
 
-        // Elige la ciudad correcta (simplificado, sin niveles aún)
-        ciudadCorrecta = ciudades[Math.floor(Math.random() * ciudades.length)];
+    function mostrarPregunta() {
+        // Filtrar ciudades por dificultad seleccionada
+        const dificultadSeleccionada = document.querySelector('input[name="dificultad"]:checked').value;
+        let ciudadesDisponibles = ciudades.filter(c => c.dificultad === dificultadSeleccionada && !ciudadesMostradas.includes(c.nombre));
 
-        // Genera opciones incorrectas
-        const opciones = [ciudadCorrecta];
+        if (ciudadesDisponibles.length === 0) {
+            ciudadesMostradas = ciudadesMostradas.filter(nombreCiudad => {
+                const ciudad = ciudades.find(c => c.nombre === nombreCiudad);
+                return ciudad && ciudad.dificultad !== dificultadSeleccionada;
+            });
+            ciudadesDisponibles = ciudades.filter(c => c.dificultad === dificultadSeleccionada);
+
+             if (ciudadesDisponibles.length === 0) {
+                alert(`No hay ciudades para el nivel "${dificultadSeleccionada}". Elige otro.`);
+                prepararRonda();
+                return;
+             }
+        }
+
+        // Seleccionar ciudad y opciones
+        ciudadActual = ciudadesDisponibles[Math.floor(Math.random() * ciudadesDisponibles.length)];
+        ciudadesMostradas.push(ciudadActual.nombre);
+
+        const opciones = [ciudadActual];
         while (opciones.length < 3) {
-            const opcionFalsa = ciudades[Math.floor(Math.random() * ciudades.length)];
-            if (!opciones.some(opt => opt.nombre === opcionFalsa.nombre)) {
-                opciones.push(opcionFalsa);
+            const opcionAleatoria = ciudades[Math.floor(Math.random() * ciudades.length)];
+            if (!opciones.some(opt => opt.nombre === opcionAleatoria.nombre)) {
+                opciones.push(opcionAleatoria);
             }
         }
 
-        // Barajar las opciones
         opciones.sort(() => Math.random() - 0.5);
 
-        // Mostrar imagen y botones
-        imagenEl.src = ciudadCorrecta.imagen_url;
+        // Mostrar elementos del juego
+        imagenCiudad.src = ciudadActual.imagen_url;
+        imagenCiudad.style.display = 'block';
+        btnMostrarCiudad.style.display = 'none';
+        radiosDificultad.forEach(radio => radio.disabled = true); // Bloquear dificultad
+
+        opcionesContainer.innerHTML = '';
         opciones.forEach(opcion => {
             const boton = document.createElement('button');
             boton.textContent = opcion.nombre;
-            boton.onclick = () => comprobarRespuesta(opcion);
+            boton.onclick = () => verificarRespuesta(opcion.nombre === ciudadActual.nombre);
             opcionesContainer.appendChild(boton);
         });
     }
 
-    // 3. Comprobar la respuesta del usuario
-    function comprobarRespuesta(opcionSeleccionada) {
-        if (opcionSeleccionada.nombre === ciudadCorrecta.nombre) {
-            feedbackEl.textContent = '¡Correcto!';
-            feedbackEl.style.color = 'white';
-            feedbackEl.style.backgroundColor = '#28a745'; // Verde éxito
-            actualizarPuntuacion(10);
-        } else {
-            feedbackEl.textContent = `Incorrecto. La respuesta era ${ciudadCorrecta.nombre}.`;
-            feedbackEl.style.color = 'white';
-            feedbackEl.style.backgroundColor = '#dc3545'; // Rojo error
-        }
-        // Desactivar botones para evitar múltiples clics
+    function verificarRespuesta(esCorrecta) {
+        // Deshabilitar botones de opción
         document.querySelectorAll('#opciones-container button').forEach(btn => btn.disabled = true);
 
-        // Esperar un poco y pasar a la siguiente ronda
-        setTimeout(siguienteRonda, 2000);
-    }
-    
-    function actualizarPuntuacion(puntos) {
-        puntuacion += puntos;
-        puntuacionEl.textContent = `Puntuación: ${puntuacion}`;
+        const puntos = obtenerPuntosPorDificultad();
+        if (esCorrecta) {
+            feedbackContainer.innerHTML = `<p class="feedback correcto">¡Correcto! +${puntos} puntos.</p>`;
+            jugadores[jugadorActualIndex].puntuacion += puntos;
+        } else {
+            feedbackContainer.innerHTML = `<p class="feedback incorrecto">¡Incorrecto! La respuesta era ${ciudadActual.nombre}.</p>`;
+        }
+
+        actualizarDisplayPuntuaciones();
+
+        // Iniciar temporizador para pasar al siguiente jugador automáticamente
+        setTimeout(pasarAlSiguiente, 2000); // Espera 2 segundos (2000 ms)
     }
 
-    // Configuración del botón de inicio
-    btnIniciarJuego.addEventListener('click', () => {
-        pantallaInicio.classList.add('hidden');
-        contenedorJuego.classList.remove('hidden');
-        iniciarJuego();
-    });
+    function siguienteTurno() {
+        jugadorActualIndex = (jugadorActualIndex + 1) % jugadores.length;
 
-    // Configuración del botón de cerrar
-    btnCerrarJuego.addEventListener('click', () => {
-        contenedorJuego.classList.add('hidden');
-        pantallaInicio.classList.remove('hidden');
-    });
+        // Si el índice vuelve a 0, significa que todos han jugado una ronda.
+        if (jugadorActualIndex === 0) {
+            rondasRestantes--;
+            actualizarContadorRonda();
+        }
+    }
+
+    function finDelJuego() {
+        // Por ahora, una simple alerta. Más adelante podemos hacer una pantalla de ganador.
+        alert("¡Fin del juego!");
+        // Deshabilitamos la interfaz para que no se pueda seguir jugando.
+        opcionesContainer.innerHTML = '<h2>¡Juego Terminado!</h2>';
+        feedbackContainer.innerHTML = '';
+        btnMostrarCiudad.style.display = 'none';
+        document.querySelector('.dificultad-container').style.display = 'none';
+    }
+
+    // --- FUNCIONES AUXILIARES ---
+
+    function obtenerPuntosPorDificultad() {
+        const dificultad = document.querySelector('input[name="dificultad"]:checked').value;
+        switch (dificultad) {
+            case 'facil': return 10;
+            case 'medio': return 20;
+            case 'dificil': return 50;
+            default: return 10;
+        }
+    }
+
+    function actualizarDisplayPuntuaciones() {
+        listaPuntuacionesEl.innerHTML = '';
+        jugadores.forEach((jugador, index) => {
+            const li = document.createElement('li');
+            li.textContent = `${jugador.nombre}: ${jugador.puntuacion} pts`;
+            if (index === jugadorActualIndex) {
+                li.classList.add('activo'); // Resaltar jugador actual
+            }
+            listaPuntuacionesEl.appendChild(li);
+        });
+    }
+
+    function actualizarContadorRonda() {
+        const numeroRondaEl = document.getElementById('numero-ronda');
+        numeroRondaEl.textContent = rondasRestantes;
+    }
+
+    function pasarAlSiguiente() {
+        // Comprobar si el juego ha terminado ANTES de pasar al siguiente turno
+        if (jugadorActualIndex === jugadores.length - 1 && rondasRestantes <= 1) {
+            finDelJuego();
+            return;
+        }
+
+        // 1. Pasa al siguiente jugador
+        siguienteTurno();
+        // 2. Prepara la ronda para el nuevo jugador
+        prepararRonda();
+        // 3. Actualiza el display para resaltar al nuevo jugador
+        actualizarDisplayPuntuaciones();
+    }
+
+    // --- EVENT LISTENERS ---
+
+    btnMostrarCiudad.onclick = mostrarPregunta;
 
 });
