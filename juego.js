@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const contenedorJuego = document.getElementById('contenedor-juego');
     const imagenCiudad = document.getElementById('imagen-ciudad');
     const opcionesContainer = document.getElementById('opciones-container');
-    const feedbackContainer = document.getElementById('feedback-container');
     const radiosDificultad = document.querySelectorAll('input[name="dificultad"]');
     const btnMostrarCiudad = document.getElementById('btn-mostrar-ciudad');
     const listaPuntuacionesEl = document.getElementById('lista-puntuaciones');
+    const solucionContainer = document.getElementById('solucion-anterior');
 
     // Estado del juego
     let ciudades = [];
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let ciudadesMostradas = [];
     let jugadores = [];
     let jugadorActualIndex = 0;
-    let rondasRestantes = 10;
+    let rondasRestantes = 5; // 2. El número de rondas empieza en 5
 
     // --- INICIALIZACIÓN ---
     
@@ -54,7 +54,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     function prepararRonda() {
         // Restablecer la interfaz para una nueva pregunta
         opcionesContainer.innerHTML = '';
-        feedbackContainer.innerHTML = '';
+        // Limpiar el contenedor de la solución anterior
+        solucionContainer.classList.remove('correcto', 'incorrecto');
+        solucionContainer.textContent = ''; // 4. Limpiar la solución anterior
         
         imagenCiudad.style.display = 'none'; // Ocultar imagen
         btnMostrarCiudad.style.display = 'block'; // Mostrar botón
@@ -130,11 +132,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.querySelectorAll('#opciones-container button').forEach(btn => btn.disabled = true);
 
         const puntos = obtenerPuntosPorDificultad();
+        solucionContainer.classList.remove('correcto', 'incorrecto'); // Limpiar clases de color previas
+
         if (esCorrecta) {
-            feedbackContainer.innerHTML = `<p class="feedback correcto">¡Correcto! +${puntos} puntos.</p>`;
             jugadores[jugadorActualIndex].puntuacion += puntos;
+            solucionContainer.textContent = `${ciudadActual.nombre} (${ciudadActual.pais}) +${puntos}`;
+            solucionContainer.classList.add('correcto');
         } else {
-            feedbackContainer.innerHTML = `<p class="feedback incorrecto">¡Incorrecto! La respuesta era ${ciudadActual.nombre}.</p>`;
+            solucionContainer.textContent = `${ciudadActual.nombre} (${ciudadActual.pais})`;
+            solucionContainer.classList.add('incorrecto');
         }
 
         actualizarDisplayPuntuaciones();
@@ -154,13 +160,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function finDelJuego() {
-        // Por ahora, una simple alerta. Más adelante podemos hacer una pantalla de ganador.
-        alert("¡Fin del juego!");
-        // Deshabilitamos la interfaz para que no se pueda seguir jugando.
-        opcionesContainer.innerHTML = '<h2>¡Juego Terminado!</h2>';
-        feedbackContainer.innerHTML = '';
-        btnMostrarCiudad.style.display = 'none';
-        document.querySelector('.dificultad-container').style.display = 'none';
+        // 1. Ordenar jugadores por puntuación (de mayor a menor)
+        jugadores.sort((a, b) => b.puntuacion - a.puntuacion);
+
+        // 2. Determinar el/los ganador(es)
+        const puntuacionMaxima = jugadores[0].puntuacion;
+        const ganadores = jugadores.filter(j => j.puntuacion === puntuacionMaxima);
+
+        // 3. Preparar el contenido de la pantalla final
+        const pantallaFin = document.getElementById('pantalla-fin-juego');
+        const ganadorTexto = document.getElementById('ganador-texto');
+        const listaPuntuacionesFinales = document.getElementById('lista-puntuaciones-finales');
+
+        if (ganadores.length > 1) {
+            // Hay un empate
+            const nombresGanadores = ganadores.map(g => g.nombre).join(' y ');
+            ganadorTexto.textContent = `¡Es un empate entre ${nombresGanadores}!`;
+        } else {
+            // Hay un solo ganador
+            ganadorTexto.textContent = `¡El ganador es ${ganadores[0].nombre}!`;
+        }
+
+        // Rellenar la lista de puntuaciones finales
+        listaPuntuacionesFinales.innerHTML = '';
+        jugadores.forEach(jugador => {
+            listaPuntuacionesFinales.innerHTML += `<li>${jugador.nombre}: ${jugador.puntuacion} puntos</li>`;
+        });
+
+        // 4. Mostrar la pantalla final
+        pantallaFin.style.display = 'flex';
     }
 
     // --- FUNCIONES AUXILIARES ---
@@ -179,7 +207,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         listaPuntuacionesEl.innerHTML = '';
         jugadores.forEach((jugador, index) => {
             const li = document.createElement('li');
-            li.textContent = `${jugador.nombre}: ${jugador.puntuacion} pts`;
+            li.textContent = `${jugador.nombre}: ${jugador.puntuacion}`; // 3. Quitar "pts."
             if (index === jugadorActualIndex) {
                 li.classList.add('activo'); // Resaltar jugador actual
             }
@@ -193,14 +221,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function pasarAlSiguiente() {
-        // Comprobar si el juego ha terminado ANTES de pasar al siguiente turno
-        if (jugadorActualIndex === jugadores.length - 1 && rondasRestantes <= 1) {
-            finDelJuego();
-            return;
-        }
-
         // 1. Pasa al siguiente jugador
         siguienteTurno();
+
+        // 2. Comprobar si el juego ha terminado DESPUÉS de actualizar el contador de rondas.
+        // Si las rondas restantes llegan a 0, el juego termina.
+        if (rondasRestantes <= 0) {
+            finDelJuego();
+            return; // Detenemos la ejecución para no preparar una nueva ronda.
+        }
+
         // 2. Prepara la ronda para el nuevo jugador
         prepararRonda();
         // 3. Actualiza el display para resaltar al nuevo jugador

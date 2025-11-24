@@ -38,8 +38,10 @@
             transition: all 0.2s ease;
         }
         #lista-puntuaciones li.activo {
+            background-color: #e8f0fe; /* 1. Fondo azul suave para el jugador activo */
             border-color: #1a73e8;
             transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(26, 115, 232, 0.2); /* Sombra sutil a juego */
         }
 
         /* Contenedor de Dificultad */
@@ -62,6 +64,22 @@
             font-size: 0.9rem; /* Reduce un poco el tamaño de la fuente */
             align-items: center;
             justify-content: center;
+        }
+        
+        #solucion-anterior {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #1a73e8;
+            text-align: right;
+        }
+        /* Estilos para el feedback de la solución */
+        #solucion-anterior.correcto {
+            color: #2e7d32; /* Verde oscuro */
+            font-weight: bold;
+        }
+        #solucion-anterior.incorrecto {
+            color: #d32f2f; /* Rojo */
+            font-weight: bold;
         }
 
         #contador-ronda {
@@ -90,6 +108,45 @@
             border-radius: 8px;
             margin-bottom: 0.5rem; /* Reducción agresiva */
         }
+
+        /* Estilos para la pantalla de fin de juego */
+        #pantalla-fin-juego {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none; /* Oculto por defecto */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .contenido-fin-juego {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            width: 400px;
+        }
+        #ganador-texto {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #1a73e8;
+            margin-bottom: 1rem;
+        }
+        #lista-puntuaciones-finales {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        #lista-puntuaciones-finales li {
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
     </style>
 </head>
 <body>
@@ -102,7 +159,7 @@
         <!-- 1. Contenedor de Jugadores -->
         <div class="jugadores-header">
             <h2>Puntuaciones</h2>
-            <div id="contador-ronda">Ronda <span id="numero-ronda">10</span></div>
+            <div id="contador-ronda">Ronda <span id="numero-ronda">5</span></div> <!-- 2. Rondas empiezan en 5 -->
         </div>
         <div class="jugadores-container">
             <ul id="lista-puntuaciones"></ul>
@@ -115,6 +172,7 @@
                 <label><input type="radio" name="dificultad" value="medio"> Medio (20)</label>
                 <label><input type="radio" name="dificultad" value="dificil"> Difícil (50)</label>
             </div>
+            <div id="solucion-anterior"></div> <!-- 4. Espacio para la solución -->
         </div>
         
         <!-- 3. Contenedor de Imagen y Botón -->
@@ -126,9 +184,17 @@
         <div id="opciones-container">
             <!-- Las opciones de respuesta se generan aquí -->
         </div>
+    </div>
 
-        <div id="feedback-container">
-            <!-- El feedback (Correcto/Incorrecto) se mostrará aquí -->
+    <!-- Pantalla de Fin de Juego (Oculta por defecto) -->
+    <div id="pantalla-fin-juego">
+        <div class="contenido-fin-juego">
+            <h2>¡Juego Terminado!</h2>
+            <p id="ganador-texto"></p>
+            <ul id="lista-puntuaciones-finales"></ul>
+            <div class="botones-finales">
+                <button class="jugar" onclick="window.location.reload()">Jugar de Nuevo</button>
+            </div>
         </div>
     </div>
 
