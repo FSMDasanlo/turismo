@@ -205,20 +205,19 @@ header h1 {
         justify-content: center;
         flex-wrap: nowrap;
     }
-    /* 2. Botones de respuesta: los ponemos en columna */
+    /* 2. Botones de respuesta: los apilamos en columna para mejor legibilidad */
     #opciones-container {
         flex-direction: column;
-        /* Override previous column direction and force single row */
-        flex-direction: row;
-        flex-wrap: nowrap; /* Crucial: evita que los botones salten de línea */
-        gap: 5px; /* Reduce el espacio entre botones */
-        justify-content: space-around; /* Distribuye el espacio si sobra */
+        gap: 8px; /* Espacio vertical entre botones */
     }
     #opciones-container button {
-        font-size: 0.7em; /* Reduce el tamaño de la fuente */
-        padding: 8px 5px; /* Reduce el padding para que quepan */
-        white-space: nowrap; /* Evita que el texto se rompa dentro del botón */
-        flex-shrink: 1; /* Permite que los botones se encojan si es necesario */
-        min-width: 0; /* Permite que el contenido se desborde si no hay espacio */
+        font-size: 1em; /* Restauramos un tamaño de fuente legible */
+        padding: 12px 10px; /* Hacemos los botones más altos y fáciles de pulsar */
+    }
+
+    /* 3. Imagen de la ciudad: aseguramos que se vea completa */
+    #imagen-ciudad {
+        object-fit: contain; /* Muestra la imagen completa sin recortar */
+        max-height: none; /* Eliminamos la altura máxima en móviles */
     }
 }
