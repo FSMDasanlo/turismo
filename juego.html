@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viajar es Saber - Juego</title>
     <link rel="stylesheet" href="style.css">
+    <!-- 1. Añadir Leaflet.js para el mapa interactivo -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
     <style>
         /* Contenedor de Jugadores y su cabecera */
         .jugadores-header {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end; /* Alineamos el contenido (el contador) a la derecha */
             align-items: center;
             margin-bottom: 0.5rem; /* Reducción agresiva */
         }
@@ -37,23 +41,6 @@
             border: 2px solid transparent;
             transition: all 0.2s ease;
         }
-        #lista-puntuaciones li.activo {
-            background-color: #e8f0fe; /* 1. Fondo azul suave para el jugador activo */
-            border-color: #1a73e8;
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(26, 115, 232, 0.2); /* Sombra sutil a juego */
-        }
-
-        /* Contenedor de Dificultad */
-        .dificultad-container {
-            background-color: #f8f9fa;
-            padding: 0.5rem 1rem; /* Reducido padding vertical */
-            border-radius: 8px;
-            margin-bottom: 0.5rem; /* Reducción agresiva */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
         .opciones-dificultad label {
             margin-right: 1rem;
             font-weight: 500;
@@ -65,36 +52,39 @@
             align-items: center;
             justify-content: center;
         }
+        #lista-puntuaciones li.activo {
+            background-color: #e8f0fe; /* 1. Fondo azul suave para el jugador activo */
+            border-color: #1a73e8;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(26, 115, 232, 0.2); /* Sombra sutil a juego */
+        }
+
+        /* Nuevo contenedor para la dificultad y la ronda */
+        #dificultad-ronda-bar {
+            display: flex;
+            justify-content: space-between; /* Alinea izquierda y derecha */
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: white; /* Color de texto por defecto para contraste */
+            transition: background-color 0.3s ease; /* Transición suave para el fondo */
+        }
+        #dificultad-ronda-bar.facil { background-color: #28a745; /* Verde */ }
+        #dificultad-ronda-bar.medio { background-color: #fd7e14; /* Naranja */ }
+        #dificultad-ronda-bar.dificil { background-color: #dc3545; /* Rojo */ }
+
+        #dificultad-ronda-bar #numero-ronda {
+            font-size: 1.3rem; /* Mantiene el tamaño grande para el número de ronda */
+            vertical-align: middle;
+        }
         
         #solucion-anterior {
             font-size: 0.9rem;
             font-weight: bold;
             color: #1a73e8;
             text-align: right;
-        }
-        /* Estilos para el feedback de la solución */
-        #solucion-anterior.correcto {
-            color: #2e7d32; /* Verde oscuro */
-            font-weight: bold;
-        }
-        #solucion-anterior.incorrecto {
-            color: #d32f2f; /* Rojo */
-            font-weight: bold;
-        }
-
-        #contador-ronda {
-            background-color: #e9ecef;
-            color: #5f6368;
-            font-size: 0.9rem;
-            font-weight: bold;
-            border-radius: 8px;
-            padding: 0.5rem 1rem;
-        }
-
-        #contador-ronda span {
-            font-size: 1.3rem;
-            vertical-align: middle;
-            margin-left: 0.5rem;
         }
 
         /* Contenedor de la Imagen */
@@ -128,8 +118,9 @@
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            position: relative; /* Necesario para posicionar el botón de cierre */
             max-width: 90%;
-            width: 400px;
+            width: 500px; /* Hacemos la ventana final un poco más ancha */
         }
         #ganador-texto {
             font-size: 1.8rem;
@@ -147,6 +138,56 @@
             padding: 0.5rem 0;
             border-bottom: 1px solid #eee;
         }
+        #dato-curioso-container {
+            display: none; /* Oculto por defecto */
+            margin-top: 1.5rem;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        #map-container {
+            height: 300px; /* Altura fija para el contenedor del mapa */
+            width: 100%;
+            border-radius: 8px;
+        }
+        /* Ajuste para el bocadillo (popup) del mapa */
+        .leaflet-popup-content-wrapper {
+            border-radius: 8px;
+        }
+        .leaflet-popup-content {
+            max-width: 280px !important; /* Ancho máximo para el popup */
+        }
+        /* Estilos para el feedback de la solución */
+        #solucion-anterior.correcto {
+            color: #2e7d32; /* Verde oscuro */
+            font-weight: bold;
+        }
+        #solucion-anterior.incorrecto {
+            color: #d32f2f; /* Rojo */
+            font-weight: bold;
+        }
+
+        .botones-finales {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .botones-finales button {
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .botones-finales button:hover { transform: scale(1.05); }
+        .botones-finales .jugar { background-color: #28a745; color: white; }
+        .botones-finales .gestion { background-color: #ffc107; color: #333; }
+
+        .btn-cerrar-popup {
+            position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 2rem; color: #aaa; cursor: pointer; line-height: 1;
+        }
     </style>
 </head>
 <body>
@@ -158,27 +199,24 @@
 
         <!-- 1. Contenedor de Jugadores -->
         <div class="jugadores-header">
-            <h2>Puntuaciones</h2>
-            <div id="contador-ronda">Ronda <span id="numero-ronda">5</span></div> <!-- 2. Rondas empiezan en 5 -->
+            <!-- El contenido de este header ahora se gestiona en #dificultad-ronda-bar -->
+        </div>
+        <div id="dificultad-ronda-bar">
+            <span id="dificultad-display"></span><span>Ronda <span id="numero-ronda">5</span></span>
         </div>
         <div class="jugadores-container">
             <ul id="lista-puntuaciones"></ul>
         </div>
         
         <!-- 2. Contenedor de Dificultad -->
-        <div class="dificultad-container">
-            <div class="opciones-dificultad">
-                <label><input type="radio" name="dificultad" value="facil" checked> Fácil (10)</label>
-                <label><input type="radio" name="dificultad" value="medio"> Medio (20)</label>
-                <label><input type="radio" name="dificultad" value="dificil"> Difícil (50)</label>
-            </div>
-            <div id="solucion-anterior"></div> <!-- 4. Espacio para la solución -->
+        <div class="dificultad-container" id="seleccion-dificultad"> <!-- Añadido ID para poder ocultarlo -->
+            <!-- Este contenedor ahora se oculta y está vacío -->
         </div>
-        
+        <div id="solucion-anterior"></div> <!-- Movido aquí para que siempre sea visible -->
+
         <!-- 3. Contenedor de Imagen y Botón -->
         <div class="imagen-container">
             <img id="imagen-ciudad" src="" alt="Adivina la ciudad">
-            <button id="btn-mostrar-ciudad">Mostrar Ciudad</button>
         </div>
 
         <div id="opciones-container">
@@ -189,11 +227,18 @@
     <!-- Pantalla de Fin de Juego (Oculta por defecto) -->
     <div id="pantalla-fin-juego">
         <div class="contenido-fin-juego">
+            <button class="btn-cerrar-popup" onclick="window.location.href='index.html'" title="Cerrar">&times;</button>
             <h2>¡Juego Terminado!</h2>
             <p id="ganador-texto"></p>
             <ul id="lista-puntuaciones-finales"></ul>
+            <!-- Contenedor para el Dato Curioso -->
+            <div id="dato-curioso-container">
+                <h3>Dato curioso sobre la ciudad que se te resistió</h3>
+                <div id="map-container"></div> <!-- Aquí irá el mapa -->
+            </div>
             <div class="botones-finales">
                 <button class="jugar" onclick="window.location.reload()">Jugar de Nuevo</button>
+                <button class="gestion" onclick="window.location.href='index.html'">Gestionar Jugadores</button>
             </div>
         </div>
     </div>

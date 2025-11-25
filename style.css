@@ -153,14 +153,6 @@ header h1 {
     border-radius: 5px;
 }
 
-/* Estilo para el botón cuando pide mostrar la ciudad */
-.btn-mostrar-ciudad {
-    background-color: #1a73e8;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-}
-
 /* Clase de utilidad para ocultar elementos */
 .hidden {
     display: none;
@@ -220,4 +212,18 @@ header h1 {
         object-fit: contain; /* Muestra la imagen completa sin recortar */
         max-height: none; /* Eliminamos la altura máxima en móviles */
     }
+}
+
+/* Estilos para el display de dificultad aleatoria */
+#dificultad-display {
+    font-weight: bold;
+    margin-right: 0; /* Ya no es necesario con justify-content: space-between en el padre */
+    text-transform: uppercase;
+}
+
+/* Estilos para el contenedor de la solución movido */
+#solucion-anterior {
+    min-height: 20px; /* Espacio reservado para que no salte la interfaz */
+    margin-bottom: 0.5rem;
+    text-align: center;
 }
