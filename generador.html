@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Ciudades - Viajar es Saber</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+        }
+        .main-container {
+            max-width: 600px;
+            width: 100%;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        #json-output {
+            width: 100%;
+            height: 150px;
+            background-color: #272822;
+            color: #f8f8f2;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        .btn-generar {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.2rem;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+        .nota {
+            font-size: 0.9rem;
+            color: #555;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>Generador de Ciudades</h1>
+        </header>
+        <div class="form-group">
+            <label for="nombre">Nombre de la Ciudad</label>
+            <input type="text" id="nombre" placeholder="Ej: Praga">
+        </div>
+        <div class="form-group">
+            <label for="pais">País</label>
+            <input type="text" id="pais" placeholder="Ej: República Checa">
+        </div>
+        <div class="form-group">
+            <label for="imagen_url">URL de la Imagen</label>
+            <input type="text" id="imagen_url" placeholder="Ej: imagenes/praga.jpg">
+        </div>
+        <div class="form-group">
+            <label for="dificultad">Dificultad</label>
+            <select id="dificultad">
+                <option value="facil">Fácil</option>
+                <option value="medio">Medio</option>
+                <option value="dificil">Difícil</option>
+            </select>
+        </div>
+        <button class="btn-generar" onclick="generarJSON()">Generar Código</button>
+        <div class="form-group">
+            <label>Código JSON (copia y pega esto en ciudades.json)</label>
+            <textarea id="json-output" readonly></textarea>
+        </div>
+        <p class="nota">Recuerda añadir una coma (,) antes de pegar este código si no es la última ciudad de la lista.</p>
+    </div>
+
+    <script>
+        function generarJSON() {
+            const ciudad = {
+                nombre: document.getElementById('nombre').value,
+                pais: document.getElementById('pais').value,
+                imagen_url: document.getElementById('imagen_url').value,
+                dificultad: document.getElementById('dificultad').value
+            };
+            const jsonString = JSON.stringify(ciudad, null, 2); // El '2' formatea el JSON para que sea legible
+            document.getElementById('json-output').value = jsonString;
+        }
+    </script>
+</body>
+</html>

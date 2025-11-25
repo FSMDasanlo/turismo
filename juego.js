@@ -1,23 +1,47 @@
 document.addEventListener('DOMContentLoaded', async () => {
     // Elementos del DOM
+    const urlParams = new URLSearchParams(window.location.search);
     const contenedorJuego = document.getElementById('contenedor-juego');
+    const btnSonido = document.getElementById('btn-sonido');
     const dificultadDisplay = document.getElementById('dificultad-display'); // 1. Nuevo elemento para mostrar la dificultad
     const dificultadRondaBarEl = document.getElementById('dificultad-ronda-bar'); // Nuevo elemento para la barra de dificultad/ronda
     const imagenCiudad = document.getElementById('imagen-ciudad');
     const opcionesContainer = document.getElementById('opciones-container');
     const listaPuntuacionesEl = document.getElementById('lista-puntuaciones');
+    const contadorJuegoEl = document.getElementById('contador-juego');
     const seleccionDificultadContainer = document.getElementById('seleccion-dificultad'); // 1. Contenedor de los radios
     const solucionContainer = document.getElementById('solucion-anterior');
+    const pantallaTransicionEl = document.getElementById('pantalla-transicion');
+    const tituloTransicionEl = document.getElementById('titulo-transicion');
+    const btnSiguienteJugador = document.getElementById('btn-siguiente-jugador');
 
     // Estado del juego
+    const esModoContrarreloj = urlParams.get('modo') === 'contrarreloj';
     let ciudades = [];
     let ciudadActual = null;
     let ciudadesMostradas = [];
     let jugadores = [];
     let jugadorActualIndex = 0;
     let dificultadActualRonda = ''; // 1. Variable para la dificultad de la ronda
-    let rondasRestantes = 5; // 2. El número de rondas empieza en 5
+    // --- Variables de modo de juego ---
+    let rondasRestantes = 5; 
+    let tiempoRestante = 60; // Tiempo inicial para modo contrarreloj
+    // Contadores para el resumen del modo contrarreloj
+    let aciertosTurno = 0;
+    let fallosTurno = 0;
+    // Contadores para la progresión de dificultad en contrarreloj
+    let preguntasFacilesHechas = 0;
+    let preguntasMediasHechas = 0;
+    let resumenContrarrelojData = []; // Para guardar los datos y ordenarlos al final
+
+    let intervaloTimer;
+
+    let sonidoActivado = true;
     let ciudadesFalladas = []; // Array para guardar las ciudades falladas
+
+    // --- Sonidos del juego ---
+    const sonidoCorrecto = new Audio('sonidos/correcto.mp3');
+    const sonidoIncorrecto = new Audio('sonidos/incorrecto.mp3');
 
     // --- INICIALIZACIÓN ---
     
@@ -33,10 +57,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Carga los jugadores y prepara la interfaz
     cargarJugadores();
-    seleccionarDificultadAleatoria(); // 1. Seleccionar dificultad al inicio
-    mostrarPregunta(); // Mostramos la primera pregunta automáticamente
+    inicializarSonido(); // Carga la preferencia de sonido del usuario
+
+    btnSonido.onclick = toggleSonido; // Asignamos el evento al botón
+    btnSiguienteJugador.onclick = iniciarTurnoContrarreloj;
+
+    if (esModoContrarreloj) {
+        iniciarModoContrarreloj();
+    } else {
+        iniciarModoClasico();
+    }
 
     // --- LÓGICA DEL JUEGO ---
+
 
     function cargarJugadores() {
         jugadores = JSON.parse(localStorage.getItem('jugadores')) || [];
@@ -51,8 +84,29 @@ document.addEventListener('DOMContentLoaded', async () => {
             jugador.puntuacion = 0;
         });
 
-        jugadorActualIndex = 0; // Empezamos con el primer jugador
-        actualizarDisplayPuntuaciones();
+        jugadorActualIndex = 0;
+
+        // En modo contrarreloj, solo mostramos al jugador activo
+        if (esModoContrarreloj) {
+            actualizarDisplayJugadorActivo();
+        } else {
+            actualizarDisplayPuntuaciones();
+        }
+    }
+
+    function iniciarModoClasico() {
+        seleccionarDificultadAleatoria();
+        mostrarPregunta();
+    }
+
+    function iniciarModoContrarreloj() {
+        // Preparamos los contadores para el primer jugador
+        preguntasFacilesHechas = 0;
+        preguntasMediasHechas = 0;
+        listaPuntuacionesEl.style.justifyContent = 'center'; // Centramos el único jugador visible
+        actualizarDificultadContrarreloj(); // Establecemos la primera dificultad (fácil)
+        mostrarPregunta();
+        iniciarTimer();
     }
 
     function prepararRonda() {
@@ -140,11 +194,19 @@ document.addEventListener('DOMContentLoaded', async () => {
             jugadores[jugadorActualIndex].puntuacion += puntos;
             solucionContainer.textContent = `${ciudadActual.nombre} (${ciudadActual.pais}) +${puntos}`;
             solucionContainer.classList.add('correcto');
+            if (sonidoActivado) sonidoCorrecto.play(); // ¡Suena el acierto!
+            if (esModoContrarreloj) {
+                aciertosTurno++;
+            }
         } else {
             solucionContainer.textContent = `${ciudadActual.nombre} (${ciudadActual.pais})`;
             solucionContainer.classList.add('incorrecto');
+            if (sonidoActivado) sonidoIncorrecto.play(); // ¡Suena el error!
             // Añadimos la ciudad a la lista de falladas para el dato curioso
             ciudadesFalladas.push(ciudadActual.nombre);
+            if (esModoContrarreloj) {
+                fallosTurno++;
+            }
         }
 
         actualizarDisplayPuntuaciones();
@@ -271,6 +333,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+    function actualizarDisplayJugadorActivo() {
+        listaPuntuacionesEl.innerHTML = '';
+        const jugador = jugadores[jugadorActualIndex];
+        const li = document.createElement('li');
+        li.textContent = `${jugador.nombre}: ${jugador.puntuacion}`;
+        li.classList.add('activo'); // Siempre está activo
+        listaPuntuacionesEl.appendChild(li);
+    }
+
     function actualizarContadorRonda() {
         const numeroRondaEl = document.getElementById('numero-ronda');
         numeroRondaEl.textContent = rondasRestantes;
@@ -304,6 +375,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function pasarAlSiguiente() {
+        if (esModoContrarreloj) {
+            prepararRonda();
+            actualizarDificultadContrarreloj(); // Actualizamos la dificultad según la progresión
+            mostrarPregunta();
+            return;
+        }
         // 1. Pasa al siguiente jugador
         siguienteTurno();
 
@@ -320,6 +397,160 @@ document.addEventListener('DOMContentLoaded', async () => {
         actualizarDisplayPuntuaciones();
         // 4. Muestra la siguiente pregunta automáticamente
         mostrarPregunta();
+    }
+
+    // --- Lógica del modo Contrarreloj ---
+
+    function iniciarTimer() {
+        actualizarDisplayTimer(); // Muestra el tiempo inicial
+        intervaloTimer = setInterval(() => {
+            tiempoRestante--;
+            actualizarDisplayTimer();
+            if (tiempoRestante <= 0) {
+                clearInterval(intervaloTimer);
+                
+                if (jugadorActualIndex < jugadores.length - 1) {
+                    mostrarPantallaTransicion();
+                } else {
+                    // Era el último jugador, fin del juego
+                    mostrarResumenFinalContrarreloj();
+                }
+            }
+        }, 1000);
+    }
+
+    function actualizarDisplayTimer() {
+        contadorJuegoEl.innerHTML = `Tiempo: <span id="numero-ronda">${tiempoRestante}</span>`;
+        // Añadimos o quitamos la clase de peligro si quedan 10 segundos o menos
+        if (tiempoRestante <= 10 && tiempoRestante > 0) {
+            contadorJuegoEl.classList.add('timer-danger');
+        } else {
+            contadorJuegoEl.classList.remove('timer-danger');
+        }
+    }
+
+    function mostrarPantallaTransicion() {
+        const jugadorActual = jugadores[jugadorActualIndex];
+        const textoSiguienteEl = document.getElementById('texto-siguiente-jugador');
+
+        // Guardamos el resultado del jugador que acaba de terminar
+        const totalPreguntas = aciertosTurno + fallosTurno;
+        resumenContrarrelojData.push({
+            nombre: jugadorActual.nombre,
+            totalPreguntas: totalPreguntas,
+            aciertos: aciertosTurno,
+            fallos: fallosTurno,
+            puntuacion: jugadorActual.puntuacion
+        });
+
+        // Actualizamos la tabla con los datos que tenemos hasta ahora
+        actualizarTablaResumen(resumenContrarrelojData);
+
+        // Preparamos el texto para el siguiente jugador
+        const siguienteJugador = jugadores[jugadorActualIndex + 1];
+        textoSiguienteEl.textContent = `Preparado, ${siguienteJugador.nombre}?`;
+
+        // Mostramos la pantalla
+        pantallaTransicionEl.style.display = 'flex';
+    }
+
+    function iniciarTurnoContrarreloj() {
+        pantallaTransicionEl.style.display = 'none'; // Ocultamos la pantalla de transición
+        jugadorActualIndex++;
+        tiempoRestante = 60; // Reiniciamos el tiempo
+        aciertosTurno = 0; // Reiniciamos contadores
+        fallosTurno = 0;
+        preguntasFacilesHechas = 0; // Reiniciamos progresión de dificultad
+        preguntasMediasHechas = 0;
+        actualizarDisplayJugadorActivo();
+        actualizarDificultadContrarreloj(); // Es importante establecer la dificultad para el nuevo turno
+        iniciarTimer();
+    }
+
+    function mostrarResumenFinalContrarreloj() {
+        // Guardamos el resultado del último jugador
+        const jugadorActual = jugadores[jugadorActualIndex];
+        const totalPreguntas = aciertosTurno + fallosTurno;
+        resumenContrarrelojData.push({
+            nombre: jugadorActual.nombre,
+            totalPreguntas: totalPreguntas,
+            aciertos: aciertosTurno,
+            fallos: fallosTurno,
+            puntuacion: jugadorActual.puntuacion
+        });
+
+        // Ordenamos la tabla de resultados
+        resumenContrarrelojData.sort((a, b) => {
+            if (b.puntuacion !== a.puntuacion) return b.puntuacion - a.puntuacion; // Por puntos
+            if (b.aciertos !== a.aciertos) return b.aciertos - a.aciertos; // Por aciertos
+            return b.totalPreguntas - a.totalPreguntas; // Por total de preguntas
+        });
+
+        // Actualizamos la tabla con los datos finales y ordenados
+        actualizarTablaResumen(resumenContrarrelojData);
+
+        // Cambiamos el texto y el botón para el final
+        tituloTransicionEl.textContent = "¡Resultados Finales!";
+        document.getElementById('texto-siguiente-jugador').style.display = 'none';
+        btnSiguienteJugador.textContent = "Ver Ganador y Dato Curioso";
+        btnSiguienteJugador.onclick = () => {
+            pantallaTransicionEl.style.display = 'none';
+            finDelJuego();
+        };
+
+        // Mostramos la pantalla
+        pantallaTransicionEl.style.display = 'flex';
+    }
+
+    function actualizarDificultadContrarreloj() {
+        if (preguntasFacilesHechas < 4) {
+            dificultadActualRonda = 'facil';
+            preguntasFacilesHechas++;
+        } else if (preguntasMediasHechas < 4) {
+            dificultadActualRonda = 'medio';
+            preguntasMediasHechas++;
+        } else {
+            dificultadActualRonda = 'dificil';
+        }
+
+        // Actualizamos la barra de color y texto
+        const puntos = obtenerPuntosPorDificultad();
+        dificultadRondaBarEl.classList.remove('facil', 'medio', 'dificil');
+        dificultadRondaBarEl.classList.add(dificultadActualRonda);
+        dificultadDisplay.textContent = `${dificultadActualRonda.toUpperCase()} +${puntos}`;
+    }
+    
+    function actualizarTablaResumen(datos) {
+        const tbodyResumenEl = document.getElementById('tbody-resumen-contrarreloj');
+        tbodyResumenEl.innerHTML = ''; // Limpiamos la tabla antes de rellenarla
+        datos.forEach(dato => {
+            const filaHTML = `
+                <tr>
+                    <td>${dato.nombre}</td>
+                    <td>${dato.totalPreguntas}</td>
+                    <td>${dato.aciertos}</td>
+                    <td>${dato.fallos}</td>
+                    <td>${dato.puntuacion}</td>
+                </tr>`;
+            tbodyResumenEl.innerHTML += filaHTML;
+        });
+    }
+
+    function toggleSonido() {
+        sonidoActivado = !sonidoActivado; // Invierte el estado
+        localStorage.setItem('sonidoActivado', sonidoActivado); // Guarda la preferencia
+        actualizarIconoSonido();
+    }
+
+    function inicializarSonido() {
+        const preferenciaGuardada = localStorage.getItem('sonidoActivado');
+        // Si no hay nada guardado, se queda en 'true'. Si está guardado como 'false', se convierte a booleano.
+        sonidoActivado = preferenciaGuardada !== 'false';
+        actualizarIconoSonido();
+    }
+
+    function actualizarIconoSonido() {
+        btnSonido.textContent = sonidoActivado ? '🔊' : '🔇';
     }
 
 });

@@ -188,12 +188,73 @@
         .btn-cerrar-popup {
             position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 2rem; color: #aaa; cursor: pointer; line-height: 1;
         }
+        /* Estilo para el nuevo botón de sonido */
+        #btn-sonido {
+            right: 50px; /* Lo posicionamos a la izquierda del botón de cerrar */
+        }
+
+        /* --- Pantalla de Transición para Modo Contrarreloj --- */
+        #pantalla-transicion {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none; /* Oculto por defecto */
+            justify-content: center;
+            align-items: center;
+            z-index: 1001; /* Por encima de la pantalla de fin de juego */
+            color: #333;
+        }
+        .contenido-transicion {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+        .contenido-transicion h2 { color: #1a73e8; }
+        /* Estilos para la nueva tabla de resumen */
+        #tabla-resumen-contrarreloj {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        #tabla-resumen-contrarreloj th, #tabla-resumen-contrarreloj td {
+            padding: 0.6rem;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        #tabla-resumen-contrarreloj th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        #tabla-resumen-contrarreloj td:first-child { text-align: left; font-weight: bold; }
+
+        .contenido-transicion p { font-size: 1.2rem; font-weight: bold; }
+        .contenido-transicion button {
+            background-color: #28a745; color: white; padding: 0.8rem 2rem; font-size: 1.2rem; border: none; border-radius: 8px; cursor: pointer;
+        }
+
+        /* --- Animación para el temporizador en modo contrarreloj --- */
+        @keyframes blink-danger {
+            50% {
+                opacity: 0.4;
+            }
+        }
+        #contador-juego.timer-danger {
+            color: #dc3545; /* Rojo */
+            animation: blink-danger 1s step-end infinite;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div id="contenedor-juego" class="main-container">
         <header>
             <h1>Viajar es saber</h1>
+            <button id="btn-sonido" title="Activar/Desactivar sonido">🔊</button>
             <button id="btn-cerrar-juego" onclick="window.location.href='index.html'">&times;</button>
         </header>
 
@@ -202,7 +263,7 @@
             <!-- El contenido de este header ahora se gestiona en #dificultad-ronda-bar -->
         </div>
         <div id="dificultad-ronda-bar">
-            <span id="dificultad-display"></span><span>Ronda <span id="numero-ronda">5</span></span>
+            <span id="dificultad-display"></span><span id="contador-juego">Ronda <span id="numero-ronda">5</span></span>
         </div>
         <div class="jugadores-container">
             <ul id="lista-puntuaciones"></ul>
@@ -240,6 +301,29 @@
                 <button class="jugar" onclick="window.location.reload()">Jugar de Nuevo</button>
                 <button class="gestion" onclick="window.location.href='index.html'">Gestionar Jugadores</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Pantalla de Transición (Modo Contrarreloj) -->
+    <div id="pantalla-transicion">
+        <div class="contenido-transicion">
+            <h2 id="titulo-transicion">Resumen Contrarreloj</h2>
+            <table id="tabla-resumen-contrarreloj">
+                <thead>
+                    <tr>
+                        <th>Jugador</th>
+                        <th>Preguntas</th>
+                        <th>Correctas</th>
+                        <th>Incorrectas</th>
+                        <th>Puntos</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-resumen-contrarreloj">
+                    <!-- Las filas con los resultados se añadirán aquí -->
+                </tbody>
+            </table>
+            <p id="texto-siguiente-jugador"></p>
+            <button id="btn-siguiente-jugador">¡Empezar!</button>
         </div>
     </div>
 

@@ -411,5 +411,216 @@
     "pais": "Laos",
     "imagen_url": "imagenes/luangprabang.jpg",
     "dificultad": "dificil"
-  }
+  },
+  {
+  "nombre": "Bruselas",
+  "pais": "Bélgica",
+  "imagen_url": "imagenes/bruselas.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Bruselas",
+  "pais": "Bélgica",
+  "imagen_url": "imagenes/bruselas1.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Bruselas",
+  "pais": "Bélgica",
+  "imagen_url": "imagenes/bruselas2.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Brujas",
+  "pais": "Bélgica",
+  "imagen_url": "imagenes/brujas.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Brujas",
+  "pais": "Bélgica",
+  "imagen_url": "imagenes/brujas1.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Amberes",
+  "pais": "Bélgica",
+  "imagen_url": "imagenes/amberes.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Amberes",
+  "pais": "Bélgica",
+  "imagen_url": "imagenes/amberes1.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Gante",
+  "pais": "Bélgica",
+  "imagen_url": "imagenes/gante.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Bremen",
+  "pais": "Alemania",
+  "imagen_url": "imagenes/bremen.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Erfurt",
+  "pais": "Alemania",
+  "imagen_url": "imagenes/erfurt.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Marsella",
+  "pais": "Francia",
+  "imagen_url": "imagenes/marsella.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Lyon",
+  "pais": "Francia",
+  "imagen_url": "imagenes/lyon.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Estrasburgo",
+  "pais": "Francia",
+  "imagen_url": "imagenes/estrasburgo.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Reims",
+  "pais": "Francia",
+  "imagen_url": "imagenes/reims.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Amiens",
+  "pais": "Francia",
+  "imagen_url": "imagenes/amiens.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Annecy",
+  "pais": "Francia",
+  "imagen_url": "imagenes/annecy.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Dunkerque",
+  "pais": "Francia",
+  "imagen_url": "imagenes/dunkerque.jpg",
+  "dificultad": "dificil"
+},
+{
+  "nombre": "Versalles",
+  "pais": "Francia",
+  "imagen_url": "imagenes/versalles.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Oporto",
+  "pais": "Portugal",
+  "imagen_url": "imagenes/oporto.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Oporto",
+  "pais": "Portugal",
+  "imagen_url": "imagenes/oporto1.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Oporto",
+  "pais": "Portugal",
+  "imagen_url": "imagenes/oporto2.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Cascais",
+  "pais": "Portugal",
+  "imagen_url": "imagenes/cascais.jpg",
+  "dificultad": "dificil"
+},
+{
+  "nombre": "Aveiro",
+  "pais": "Portugal",
+  "imagen_url": "imagenes/aveiro.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Lisboa",
+  "pais": "Portugal",
+  "imagen_url": "imagenes/lisboa.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Coimbra",
+  "pais": "Portugal",
+  "imagen_url": "imagenes/coimbra.jpg",
+  "dificultad": "dificil"
+},
+{
+  "nombre": "Aveiro",
+  "pais": "Portugal",
+  "imagen_url": "imagenes/aveiro1.jpg",
+  "dificultad": "dificil"
+},
+{
+  "nombre": "Toledo",
+  "pais": "España",
+  "imagen_url": "imagenes/toledo.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Toledo",
+  "pais": "España",
+  "imagen_url": "imagenes/toledo1.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Burgos",
+  "pais": "España",
+  "imagen_url": "imagenes/burgos.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Zaragoza",
+  "pais": "España",
+  "imagen_url": "imagenes/zaragoza.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Bilbao",
+  "pais": "España",
+  "imagen_url": "imagenes/bilbao.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Toledo",
+  "pais": "España",
+  "imagen_url": "imagenes/toledo1.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "León",
+  "pais": "España",
+  "imagen_url": "imagenes/leon.jpg",
+  "dificultad": "medio"
+},
+{
+  "nombre": "Girona",
+  "pais": "España",
+  "imagen_url": "imagenes/girona.jpg",
+  "dificultad": "dificil"
+},
+{
+  "nombre": "Santiago",
+  "pais": "España",
+  "imagen_url": "imagenes/santiago.jpg",
+  "dificultad": "medio"
+}
 ]
+

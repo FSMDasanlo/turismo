@@ -124,6 +124,7 @@
     }
     .botones-finales button:hover { transform: scale(1.05); }
     .botones-finales .jugar { background-color: #28a745; color: white; }
+    .botones-finales .contrarreloj { background-color: #ff9800; color: white; } /* Naranja para el nuevo modo */
 
   </style>
 </head>
@@ -143,7 +144,8 @@
     </div>
 
     <div class="botones-finales">
-      <button class="jugar" onclick="irAlJuego()">▶ Jugar</button>
+      <button class="jugar" onclick="irAlJuego()">Modo normal</button>
+      <button class="contrarreloj" onclick="irAlContrarreloj()">Modo contrarreloj</button>
     </div>
   </main>
   <script>
@@ -173,8 +175,20 @@
 
     function cargarJugadores() {
         const lista = document.getElementById('lista-jugadores');
-        const jugadores = JSON.parse(localStorage.getItem('jugadores')) || [];
         lista.innerHTML = '';
+        let jugadores = [];
+
+        try {
+            const jugadoresGuardados = JSON.parse(localStorage.getItem('jugadores'));
+            // Nos aseguramos de que lo que cargamos es un array
+            if (Array.isArray(jugadoresGuardados)) {
+                jugadores = jugadoresGuardados;
+            }
+        } catch (e) {
+            // Si hay un error al parsear (p.ej. localStorage corrupto), empezamos con un array vacío.
+            console.error("Error al cargar jugadores desde localStorage:", e);
+            jugadores = [];
+        }
 
         if (jugadores.length === 0) {
             lista.innerHTML = '<p style="text-align: center; color: #888;">Aún no hay jugadores.</p>';
@@ -182,20 +196,23 @@
         }
 
         jugadores.forEach((jugador, index) => {
-            const li = document.createElement('li');
+            // Verificamos que cada 'jugador' sea un objeto válido con nombre
+            if (typeof jugador === 'object' && jugador !== null && typeof jugador.nombre === 'string') {
+                const li = document.createElement('li');
             
-            const spanNombre = document.createElement('span');
-            spanNombre.textContent = jugador.nombre;
+                const spanNombre = document.createElement('span');
+                spanNombre.textContent = jugador.nombre;
             
-            const btnBorrar = document.createElement('button');
-            btnBorrar.textContent = '×';
-            btnBorrar.className = 'borrar-jugador';
-            btnBorrar.title = 'Eliminar jugador';
-            btnBorrar.onclick = () => borrarJugador(index);
+                const btnBorrar = document.createElement('button');
+                btnBorrar.textContent = '×';
+                btnBorrar.className = 'borrar-jugador';
+                btnBorrar.title = 'Eliminar jugador';
+                btnBorrar.onclick = () => borrarJugador(index);
 
-            li.appendChild(spanNombre);
-            li.appendChild(btnBorrar);
-            lista.appendChild(li);
+                li.appendChild(spanNombre);
+                li.appendChild(btnBorrar);
+                lista.appendChild(li);
+            }
         });
     }
 
@@ -214,6 +231,15 @@
         return;
       }
       window.location.href = 'juego.html';
+    }
+
+    function irAlContrarreloj() {
+      const jugadores = JSON.parse(localStorage.getItem('jugadores')) || [];
+      if (jugadores.length < 1) {
+        alert('Debes añadir al menos un jugador para el modo contrarreloj.');
+        return;
+      }
+      window.location.href = 'juego.html?modo=contrarreloj';
     }
   </script>
 </body>
