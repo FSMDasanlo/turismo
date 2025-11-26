@@ -159,9 +159,13 @@
 
         if (nombre) {
             let jugadores = JSON.parse(localStorage.getItem('jugadores')) || [];
-            
+            // ¡CORRECCIÓN CLAVE! Aseguramos que solo trabajamos con jugadores válidos antes de la comprobación.
+            jugadores = jugadores.filter(j => 
+                typeof j === 'object' && j !== null && typeof j.nombre === 'string'
+            );
+
             // Evitar duplicados
-            if (jugadores.some(j => j.nombre.toLowerCase() === nombre.toLowerCase())) {
+            if (jugadores.some(j => j.nombre.toLowerCase() === nombre.toLowerCase())) { // Esta es la línea 164
                 alert('Este jugador ya ha sido añadido.');
                 return;
             }
@@ -182,7 +186,11 @@
             const jugadoresGuardados = JSON.parse(localStorage.getItem('jugadores'));
             // Nos aseguramos de que lo que cargamos es un array
             if (Array.isArray(jugadoresGuardados)) {
-                jugadores = jugadoresGuardados;
+                // Filtramos para asegurar que cada jugador tiene un 'nombre' válido
+                jugadores = jugadoresGuardados.filter(j => 
+                    typeof j === 'object' && j !== null && typeof j.nombre === 'string'
+                );
+                localStorage.setItem('jugadores', JSON.stringify(jugadores)); // Guardar la versión limpia
             }
         } catch (e) {
             // Si hay un error al parsear (p.ej. localStorage corrupto), empezamos con un array vacío.
@@ -196,12 +204,17 @@
         }
 
         jugadores.forEach((jugador, index) => {
-            // Verificamos que cada 'jugador' sea un objeto válido con nombre
-            if (typeof jugador === 'object' && jugador !== null && typeof jugador.nombre === 'string') {
-                const li = document.createElement('li');
+            // Ya hemos filtrado los jugadores inválidos, así que podemos asumir que son válidos aquí.
+            const li = document.createElement('li');
             
-                const spanNombre = document.createElement('span');
+            const spanNombre = document.createElement('span');
+            // Aseguramos que el nombre se muestre, incluso si por alguna razón extraña no fuera string
+            // Aunque el filtro anterior ya debería haberlo garantizado.
+            if (typeof jugador.nombre === 'string') {
                 spanNombre.textContent = jugador.nombre;
+            } else {
+                spanNombre.textContent = '[Nombre Inválido]'; // Fallback por si acaso
+            }
             
                 const btnBorrar = document.createElement('button');
                 btnBorrar.textContent = '×';
@@ -211,8 +224,7 @@
 
                 li.appendChild(spanNombre);
                 li.appendChild(btnBorrar);
-                lista.appendChild(li);
-            }
+            lista.appendChild(li);
         });
     }
 

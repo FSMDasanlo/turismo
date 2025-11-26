@@ -72,7 +72,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
     function cargarJugadores() {
-        jugadores = JSON.parse(localStorage.getItem('jugadores')) || [];
+        const jugadoresGuardados = JSON.parse(localStorage.getItem('jugadores')) || [];
+        // Filtramos para asegurar que cada jugador tiene un 'nombre' válido
+        jugadores = jugadoresGuardados.filter(j => 
+            typeof j === 'object' && j !== null && typeof j.nombre === 'string'
+        );
         if (jugadores.length === 0) {
             alert('No se han encontrado jugadores. Por favor, añádelos para empezar.');
             window.location.href = 'index.html';
