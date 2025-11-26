@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const esModoContrarreloj = urlParams.get('modo') === 'contrarreloj';
     let ciudades = [];
     let ciudadActual = null;
-    let ciudadesMostradas = [];
+    let ciudadesMostradas = []; // Guardará los objetos de ciudad completos para evitar repetición de imágenes.
     let jugadores = [];
     let jugadorActualIndex = 0;
     let dificultadActualRonda = ''; // 1. Variable para la dificultad de la ronda
@@ -128,16 +128,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function mostrarPregunta() {
         // Filtrar ciudades por dificultad seleccionada
-        let ciudadesDisponibles = ciudades.filter(c => c.dificultad === dificultadActualRonda && !ciudadesMostradas.includes(c.nombre));
+        let ciudadesDisponibles = ciudades.filter(c => c.dificultad === dificultadActualRonda && !ciudadesMostradas.includes(c));
 
         if (ciudadesDisponibles.length === 0) {
-            ciudadesMostradas = ciudadesMostradas.filter(nombreCiudad => {
-                const ciudad = ciudades.find(c => c.nombre === nombreCiudad);
-                return ciudad && ciudad.dificultad !== dificultadActualRonda; // Corregido: usar dificultadActualRonda
-            });
-            ciudadesDisponibles = ciudades.filter(c => c.dificultad === dificultadActualRonda);
-
-             if (ciudadesDisponibles.length === 0) {
+            if (ciudades.filter(c => c.dificultad === dificultadActualRonda).length > 0) {
                 alert(`No hay ciudades para el nivel "${dificultadActualRonda}". Se intentará con otro nivel.`);
                 seleccionarDificultadAleatoria(); // Cambiamos de nivel
                 mostrarPregunta(); // E intentamos de nuevo
@@ -147,7 +141,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Seleccionar ciudad y opciones
         ciudadActual = ciudadesDisponibles[Math.floor(Math.random() * ciudadesDisponibles.length)];
-        ciudadesMostradas.push(ciudadActual.nombre);
+        ciudadesMostradas.push(ciudadActual);
 
         // --- LÓGICA MEJORADA PARA LAS OPCIONES ---
         // 1. Crear un "pool" de opciones incorrectas de la MISMA dificultad.
