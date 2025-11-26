@@ -237,15 +237,38 @@
             background-color: #28a745; color: white; padding: 0.8rem 2rem; font-size: 1.2rem; border: none; border-radius: 8px; cursor: pointer;
         }
 
-        /* --- Animación para el temporizador en modo contrarreloj --- */
-        @keyframes blink-danger {
-            50% {
-                opacity: 0.4;
-            }
+        /* --- Barra de Tiempo para Contrarreloj --- */
+        #contenedor-barra-tiempo {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            overflow: hidden; /* Asegura que la barra interior no se salga */
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+            display: none; /* Oculta por defecto */
         }
+
+        #barra-tiempo {
+            height: 18px;
+            width: 100%; /* Empieza llena */
+            background: linear-gradient(to right, #4caf50, #8bc34a);
+            border-radius: 8px;
+            transition: width 0.2s linear, background-color 0.5s ease; /* Transición suave */
+        }
+
+        /* Estilo para los últimos segundos críticos */
+        #barra-tiempo.critico {
+            background: linear-gradient(to right, #f44336, #ef5350);
+            animation: parpadeo-critico 1s infinite;
+        }
+
+        @keyframes parpadeo-critico {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        /* Eliminamos el parpadeo del texto, ahora lo hace la barra */
         #contador-juego.timer-danger {
-            color: #dc3545; /* Rojo */
-            animation: blink-danger 1s step-end infinite;
             font-weight: bold;
         }
     </style>
@@ -278,6 +301,11 @@
         <!-- 3. Contenedor de Imagen y Botón -->
         <div class="imagen-container">
             <img id="imagen-ciudad" src="" alt="Adivina la ciudad">
+        </div>
+
+        <!-- Barra de Tiempo para Contrarreloj -->
+        <div id="contenedor-barra-tiempo">
+            <div id="barra-tiempo"></div>
         </div>
 
         <div id="opciones-container">

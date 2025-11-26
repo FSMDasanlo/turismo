@@ -1,15 +1,363 @@
 [
   {
-    "nombre": "París",
+    "nombre": "Alesund",
+    "pais": "Noruega",
+    "imagen_url": "imagenes/alesund.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Amalfi",
+    "pais": "Italia",
+    "imagen_url": "imagenes/amalfi.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Amberes",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/amberes.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Amberes",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/amberes1.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Amiens",
     "pais": "Francia",
-    "imagen_url": "imagenes/paris.webp",
+    "imagen_url": "imagenes/amiens.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Ámsterdam",
+    "pais": "Países Bajos",
+    "imagen_url": "imagenes/amsterdam.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Angkor Wat",
+    "pais": "Camboya",
+    "imagen_url": "imagenes/angkorwat.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Annecy",
+    "pais": "Francia",
+    "imagen_url": "imagenes/annecy.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Astorga",
+    "pais": "España",
+    "imagen_url": "imagenes/astorga.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Astorga",
+    "pais": "España",
+    "imagen_url": "imagenes/astorga1.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Atenas",
+    "pais": "Grecia",
+    "imagen_url": "imagenes/atenas.webp",
     "dificultad": "facil"
   },
   {
-    "nombre": "Tokio",
-    "pais": "Japón",
-    "imagen_url": "imagenes/tokio.webp",
+    "nombre": "Aveiro",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/aveiro.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Aveiro",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/aveiro1.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Bagan",
+    "pais": "Myanmar",
+    "imagen_url": "imagenes/bagan.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Bangkok",
+    "pais": "Tailandia",
+    "imagen_url": "imagenes/bangkok.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Barcelona",
+    "pais": "España",
+    "imagen_url": "imagenes/barcelona2.webp",
     "dificultad": "facil"
+  },
+  {
+    "nombre": "Bergen",
+    "pais": "Noruega",
+    "imagen_url": "imagenes/bergen.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Berlín",
+    "pais": "Alemania",
+    "imagen_url": "imagenes/berlin.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Bilbao",
+    "pais": "España",
+    "imagen_url": "imagenes/bilbao.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Bremen",
+    "pais": "Alemania",
+    "imagen_url": "imagenes/bremen.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Brujas",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/brujas.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Brujas",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/brujas1.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Bruselas",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/bruselas.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Bruselas",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/bruselas1.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Bruselas",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/bruselas2.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Bucarest",
+    "pais": "Rumanía",
+    "imagen_url": "imagenes/bucarest.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Budapest",
+    "pais": "Hungría",
+    "imagen_url": "imagenes/budapest.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Buenos Aires",
+    "pais": "Argentina",
+    "imagen_url": "imagenes/buenosaires.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Burgos",
+    "pais": "España",
+    "imagen_url": "imagenes/burgos.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Cáceres",
+    "pais": "España",
+    "imagen_url": "imagenes/caceres.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Cascais",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/cascais.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Chicago",
+    "pais": "EE.UU.",
+    "imagen_url": "imagenes/chicago.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Ciudad del Cabo",
+    "pais": "Sudáfrica",
+    "imagen_url": "imagenes/ciudaddelcabo.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Coimbra",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/coimbra.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Copenhague",
+    "pais": "Dinamarca",
+    "imagen_url": "imagenes/copenhague.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Copenhague",
+    "pais": "Dinamarca",
+    "imagen_url": "imagenes/copenhague1.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Córdoba",
+    "pais": "España",
+    "imagen_url": "imagenes/cordoba.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Cusco",
+    "pais": "Perú",
+    "imagen_url": "imagenes/cusco.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Dubái",
+    "pais": "Emiratos Árabes Unidos",
+    "imagen_url": "imagenes/dubai.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Dubrovnik",
+    "pais": "Croacia",
+    "imagen_url": "imagenes/dubrovnik.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Dunkerque",
+    "pais": "Francia",
+    "imagen_url": "imagenes/dunkerque.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "El Cairo",
+    "pais": "Egipto",
+    "imagen_url": "imagenes/cairo.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Erfurt",
+    "pais": "Alemania",
+    "imagen_url": "imagenes/erfurt.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Estambul",
+    "pais": "Turquía",
+    "imagen_url": "imagenes/estambul.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Estocolmo",
+    "pais": "Suecia",
+    "imagen_url": "imagenes/estocolmo.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Estrasburgo",
+    "pais": "Francia",
+    "imagen_url": "imagenes/estrasburgo.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Florencia",
+    "pais": "Italia",
+    "imagen_url": "imagenes/florencia.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Florencia",
+    "pais": "Italia",
+    "imagen_url": "imagenes/florencia1.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Gante",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/gante.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Girona",
+    "pais": "España",
+    "imagen_url": "imagenes/girona.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Gotemburgo",
+    "pais": "Suecia",
+    "imagen_url": "imagenes/gotemburgo.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Granada",
+    "pais": "España",
+    "imagen_url": "imagenes/granada.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Helsinki",
+    "pais": "Finlandia",
+    "imagen_url": "imagenes/helsinki.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Helsinki",
+    "pais": "Finlandia",
+    "imagen_url": "imagenes/helsinki1.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Katmandú",
+    "pais": "Nepal",
+    "imagen_url": "imagenes/katmandu.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Kyoto",
+    "pais": "Japón",
+    "imagen_url": "imagenes/kyoto.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Las Vegas",
+    "pais": "Estados Unidos",
+    "imagen_url": "imagenes/lasvegas.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "León",
+    "pais": "España",
+    "imagen_url": "imagenes/leon.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Lhasa",
+    "pais": "China",
+    "imagen_url": "imagenes/lhasa.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Lisboa",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/lisboa.webp",
+    "dificultad": "medio"
   },
   {
     "nombre": "Liubliana",
@@ -18,10 +366,22 @@
     "dificultad": "dificil"
   },
   {
-    "nombre": "Sidney",
-    "pais": "Australia",
-    "imagen_url": "imagenes/sidney.webp",
+    "nombre": "Londres",
+    "pais": "Reino Unido",
+    "imagen_url": "imagenes/londres.webp",
     "dificultad": "facil"
+  },
+  {
+    "nombre": "Luang Prabang",
+    "pais": "Laos",
+    "imagen_url": "imagenes/luangprabang.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Lyon",
+    "pais": "Francia",
+    "imagen_url": "imagenes/lyon.webp",
+    "dificultad": "medio"
   },
   {
     "nombre": "Madrid",
@@ -66,412 +426,10 @@
     "dificultad": "facil"
   },
   {
-    "nombre": "Sevilla",
-    "pais": "España",
-    "imagen_url": "imagenes/sevilla.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Salamanca",
-    "pais": "España",
-    "imagen_url": "imagenes/salamanca.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Segovia",
-    "pais": "España",
-    "imagen_url": "imagenes/segovia.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Valencia",
-    "pais": "España",
-    "imagen_url": "imagenes/valencia.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Granada",
-    "pais": "España",
-    "imagen_url": "imagenes/granada.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Segovia",
-    "pais": "España",
-    "imagen_url": "imagenes/segovia1.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Barcelona",
-    "pais": "España",
-    "imagen_url": "imagenes/barcelona2.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Sevilla",
-    "pais": "España",
-    "imagen_url": "imagenes/sevilla1.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Sevilla",
-    "pais": "España",
-    "imagen_url": "imagenes/sevilla2.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Córdoba",
-    "pais": "España",
-    "imagen_url": "imagenes/cordoba.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Valencia",
-    "pais": "España",
-    "imagen_url": "imagenes/valencia1.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Roma",
-    "pais": "Italia",
-    "imagen_url": "imagenes/roma.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Londres",
-    "pais": "Reino Unido",
-    "imagen_url": "imagenes/londres.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Nueva York",
-    "pais": "EE.UU.",
-    "imagen_url": "imagenes/nuevayork.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "El Cairo",
-    "pais": "Egipto",
-    "imagen_url": "imagenes/cairo.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Río de Janeiro",
-    "pais": "Brasil",
-    "imagen_url": "imagenes/rio.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Atenas",
-    "pais": "Grecia",
-    "imagen_url": "imagenes/atenas.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Pekín",
-    "pais": "China",
-    "imagen_url": "imagenes/pekin.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Moscú",
-    "pais": "Rusia",
-    "imagen_url": "imagenes/moscu.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Berlín",
-    "pais": "Alemania",
-    "imagen_url": "imagenes/berlin.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Ámsterdam",
-    "pais": "Países Bajos",
-    "imagen_url": "imagenes/amsterdam.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Praga",
-    "pais": "República Checa",
-    "imagen_url": "imagenes/praga.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Estambul",
-    "pais": "Turquía",
-    "imagen_url": "imagenes/estambul.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Dubái",
-    "pais": "Emiratos Árabes Unidos",
-    "imagen_url": "imagenes/dubai.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Bangkok",
-    "pais": "Tailandia",
-    "imagen_url": "imagenes/bangkok.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Seúl",
-    "pais": "Corea del Sur",
-    "imagen_url": "imagenes/seul.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Buenos Aires",
-    "pais": "Argentina",
-    "imagen_url": "imagenes/buenosaires.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Katmandú",
-    "pais": "Nepal",
-    "imagen_url": "imagenes/katmandu.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Reikiavik",
-    "pais": "Islandia",
-    "imagen_url": "imagenes/reikiavik.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Cusco",
-    "pais": "Perú",
-    "imagen_url": "imagenes/cusco.webp",
-    "dificultad": "dificil"
-  },
-  {
     "nombre": "Marrakech",
     "pais": "Marruecos",
     "imagen_url": "imagenes/marrakech.webp",
     "dificultad": "dificil"
-  },
-  {
-    "nombre": "Astorga",
-    "pais": "España",
-    "imagen_url": "imagenes/astorga.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Traid",
-    "pais": "España",
-    "imagen_url": "imagenes/traid.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Astorga",
-    "pais": "España",
-    "imagen_url": "imagenes/astorga1.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Traid",
-    "pais": "España",
-    "imagen_url": "imagenes/traid1.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Kyoto",
-    "pais": "Japón",
-    "imagen_url": "imagenes/kyoto.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Venecia",
-    "pais": "Italia",
-    "imagen_url": "imagenes/venecia.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Venecia",
-    "pais": "Italia",
-    "imagen_url": "imagenes/venecia1.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "San Francisco",
-    "pais": "EE.UU.",
-    "imagen_url": "imagenes/sanfrancisco.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "San Francisco",
-    "pais": "EE.UU.",
-    "imagen_url": "imagenes/sanfrancisco1.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "San Francisco",
-    "pais": "EE.UU.",
-    "imagen_url": "imagenes/sanfrancisco2.webp",
-    "dificultad": "facil"
-  },
-  {
-    "nombre": "Singapur",
-    "pais": "Singapur",
-    "imagen_url": "imagenes/singapur.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Singapur",
-    "pais": "Singapur",
-    "imagen_url": "imagenes/singapur1.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Ciudad del Cabo",
-    "pais": "Sudáfrica",
-    "imagen_url": "imagenes/ciudaddelcabo.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Helsinki",
-    "pais": "Finlandia",
-    "imagen_url": "imagenes/helsinki.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Helsinki",
-    "pais": "Finlandia",
-    "imagen_url": "imagenes/helsinki1.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Ushuaia",
-    "pais": "Argentina",
-    "imagen_url": "imagenes/ushuaia.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Lhasa",
-    "pais": "China",
-    "imagen_url": "imagenes/lhasa.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Petra",
-    "pais": "Jordania",
-    "imagen_url": "imagenes/petra.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Angkor Wat",
-    "pais": "Camboya",
-    "imagen_url": "imagenes/angkorwat.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Valletta",
-    "pais": "Malta",
-    "imagen_url": "imagenes/valletta.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Timbuktu",
-    "pais": "Mali",
-    "imagen_url": "imagenes/timbuktu.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Samarcanda",
-    "pais": "Uzbekistán",
-    "imagen_url": "imagenes/samarcanda.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Bagan",
-    "pais": "Myanmar",
-    "imagen_url": "imagenes/bagan.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Dubrovnik",
-    "pais": "Croacia",
-    "imagen_url": "imagenes/dubrovnik.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Zanzíbar",
-    "pais": "Tanzania",
-    "imagen_url": "imagenes/zanzibar.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Quito",
-    "pais": "Ecuador",
-    "imagen_url": "imagenes/quito.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Luang Prabang",
-    "pais": "Laos",
-    "imagen_url": "imagenes/luangprabang.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Bruselas",
-    "pais": "Bélgica",
-    "imagen_url": "imagenes/bruselas.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Bruselas",
-    "pais": "Bélgica",
-    "imagen_url": "imagenes/bruselas1.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Bruselas",
-    "pais": "Bélgica",
-    "imagen_url": "imagenes/bruselas2.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Brujas",
-    "pais": "Bélgica",
-    "imagen_url": "imagenes/brujas.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Brujas",
-    "pais": "Bélgica",
-    "imagen_url": "imagenes/brujas1.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Amberes",
-    "pais": "Bélgica",
-    "imagen_url": "imagenes/amberes.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Amberes",
-    "pais": "Bélgica",
-    "imagen_url": "imagenes/amberes1.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Gante",
-    "pais": "Bélgica",
-    "imagen_url": "imagenes/gante.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Bremen",
-    "pais": "Alemania",
-    "imagen_url": "imagenes/bremen.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Erfurt",
-    "pais": "Alemania",
-    "imagen_url": "imagenes/erfurt.webp",
-    "dificultad": "medio"
   },
   {
     "nombre": "Marsella",
@@ -480,46 +438,22 @@
     "dificultad": "medio"
   },
   {
-    "nombre": "Lyon",
-    "pais": "Francia",
-    "imagen_url": "imagenes/lyon.webp",
+    "nombre": "Moscú",
+    "pais": "Rusia",
+    "imagen_url": "imagenes/moscu.webp",
     "dificultad": "medio"
   },
   {
-    "nombre": "Estrasburgo",
-    "pais": "Francia",
-    "imagen_url": "imagenes/estrasburgo.webp",
-    "dificultad": "medio"
+    "nombre": "Nueva York",
+    "pais": "EE.UU.",
+    "imagen_url": "imagenes/newyork.webp",
+    "dificultad": "facil"
   },
   {
-    "nombre": "Reims",
-    "pais": "Francia",
-    "imagen_url": "imagenes/reims.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Amiens",
-    "pais": "Francia",
-    "imagen_url": "imagenes/amiens.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Annecy",
-    "pais": "Francia",
-    "imagen_url": "imagenes/annecy.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Dunkerque",
-    "pais": "Francia",
-    "imagen_url": "imagenes/dunkerque.webp",
-    "dificultad": "dificil"
-  },
-  {
-    "nombre": "Versalles",
-    "pais": "Francia",
-    "imagen_url": "imagenes/versalles.webp",
-    "dificultad": "medio"
+    "nombre": "Nueva York",
+    "pais": "EE.UU.",
+    "imagen_url": "imagenes/nuevayork.webp",
+    "dificultad": "facil"
   },
   {
     "nombre": "Oporto",
@@ -540,34 +474,196 @@
     "dificultad": "medio"
   },
   {
-    "nombre": "Cascais",
-    "pais": "Portugal",
-    "imagen_url": "imagenes/cascais.webp",
+    "nombre": "París",
+    "pais": "Francia",
+    "imagen_url": "imagenes/paris.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "París",
+    "pais": "Francia",
+    "imagen_url": "imagenes/paris1.webp",
     "dificultad": "dificil"
   },
   {
-    "nombre": "Aveiro",
-    "pais": "Portugal",
-    "imagen_url": "imagenes/aveiro.webp",
+    "nombre": "Pekín",
+    "pais": "China",
+    "imagen_url": "imagenes/pekin.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Petra",
+    "pais": "Jordania",
+    "imagen_url": "imagenes/petra.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Pisa",
+    "pais": "Italia",
+    "imagen_url": "imagenes/pisa.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Praga",
+    "pais": "República Checa",
+    "imagen_url": "imagenes/praga.webp",
     "dificultad": "medio"
   },
   {
-    "nombre": "Lisboa",
-    "pais": "Portugal",
-    "imagen_url": "imagenes/lisboa.webp",
+    "nombre": "Quito",
+    "pais": "Ecuador",
+    "imagen_url": "imagenes/quito.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Reims",
+    "pais": "Francia",
+    "imagen_url": "imagenes/reims.webp",
     "dificultad": "medio"
   },
   {
-    "nombre": "Coimbra",
-    "pais": "Portugal",
-    "imagen_url": "imagenes/coimbra.webp",
+    "nombre": "Reikiavik",
+    "pais": "Islandia",
+    "imagen_url": "imagenes/reikiavik.webp",
     "dificultad": "dificil"
   },
   {
-    "nombre": "Aveiro",
-    "pais": "Portugal",
-    "imagen_url": "imagenes/aveiro1.webp",
+    "nombre": "Río de Janeiro",
+    "pais": "Brasil",
+    "imagen_url": "imagenes/rio.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Río de Janeiro",
+    "pais": "Brasil",
+    "imagen_url": "imagenes/rio1.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Roma",
+    "pais": "Italia",
+    "imagen_url": "imagenes/roma.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Roma",
+    "pais": "Italia",
+    "imagen_url": "imagenes/roma1.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Sabannah",
+    "pais": "Estados Unidos",
+    "imagen_url": "imagenes/sabannah.webp",
     "dificultad": "dificil"
+  },
+  {
+    "nombre": "Salamanca",
+    "pais": "España",
+    "imagen_url": "imagenes/salamanca.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Samarcanda",
+    "pais": "Uzbekistán",
+    "imagen_url": "imagenes/samarcanda.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "San Francisco",
+    "pais": "EE.UU.",
+    "imagen_url": "imagenes/sanfrancisco.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "San Francisco",
+    "pais": "EE.UU.",
+    "imagen_url": "imagenes/sanfrancisco1.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "San Francisco",
+    "pais": "EE.UU.",
+    "imagen_url": "imagenes/sanfrancisco2.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Santiago",
+    "pais": "España",
+    "imagen_url": "imagenes/santiago.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Seúl",
+    "pais": "Corea del Sur",
+    "imagen_url": "imagenes/seul.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Segovia",
+    "pais": "España",
+    "imagen_url": "imagenes/segovia.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Segovia",
+    "pais": "España",
+    "imagen_url": "imagenes/segovia1.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Sevilla",
+    "pais": "España",
+    "imagen_url": "imagenes/sevilla.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Sevilla",
+    "pais": "España",
+    "imagen_url": "imagenes/sevilla1.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Sevilla",
+    "pais": "España",
+    "imagen_url": "imagenes/sevilla2.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Sidney",
+    "pais": "Australia",
+    "imagen_url": "imagenes/sidney.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Singapur",
+    "pais": "Singapur",
+    "imagen_url": "imagenes/singapur.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Singapur",
+    "pais": "Singapur",
+    "imagen_url": "imagenes/singapur1.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Split",
+    "pais": "Croacia",
+    "imagen_url": "imagenes/split.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Timbuktu",
+    "pais": "Mali",
+    "imagen_url": "imagenes/timbuktu.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Tokio",
+    "pais": "Japón",
+    "imagen_url": "imagenes/tokio.webp",
+    "dificultad": "facil"
   },
   {
     "nombre": "Toledo",
@@ -606,188 +702,105 @@
     "dificultad": "medio"
   },
   {
-    "nombre": "León",
+    "nombre": "Traid",
     "pais": "España",
-    "imagen_url": "imagenes/leon.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Girona",
-    "pais": "España",
-    "imagen_url": "imagenes/girona.webp",
+    "imagen_url": "imagenes/traid.webp",
     "dificultad": "dificil"
   },
   {
-    "nombre": "Santiago",
+    "nombre": "Traid",
     "pais": "España",
-    "imagen_url": "imagenes/santiago.webp",
-    "dificultad": "medio"
-  },
-  {
-    "nombre": "Cáceres",
-    "pais": "España",
-    "imagen_url": "imagenes/caceres.webp",
+    "imagen_url": "imagenes/traid1.webp",
     "dificultad": "dificil"
   },
   {
-    "nombre": "Las Vegas",
-    "pais": "Estados Unidos",
-    "imagen_url": "imagenes/lasvegas.webp",
-    "dificultad": "facil"
-  },
-    {
-    "nombre": "Nueva York",
-    "pais": "EE.UU.",
-    "imagen_url": "imagenes/newyork1.webp",
-    "dificultad": "facil"
-  },
-    {
-    "nombre": "Chicago",
-    "pais": "EE.UU.",
-    "imagen_url": "imagenes/chicago.webp",
-    "dificultad": "medio"
-  },
-    {
-    "nombre": "Sabannah",
-    "pais": "Estados Unidos",
-    "imagen_url": "imagenes/sabannah.webp",
-    "dificultad": "dificil"
-  },
-    {
-    "nombre": "Río de Janeiro",
-    "pais": "Brasil",
-    "imagen_url": "imagenes/rio1.webp",
-    "dificultad": "medio"
-  },
-     {
-    "nombre": "Alesund",
-    "pais": "Noruega",
-    "imagen_url": "imagenes/alesund.webp",
-    "dificultad": "dificil"
-  },
-     {
-    "nombre": "Copenhague",
-    "pais": "Dinamarca",
-    "imagen_url": "imagenes/copenhague.webp",
-    "dificultad": "medio"
-  },
-       {
-    "nombre": "Copenhague",
-    "pais": "Dinamarca",
-    "imagen_url": "imagenes/copenhague1.webp",
-    "dificultad": "dificil"
-  },
-       {
-    "nombre": "Bergen",
-    "pais": "Noruega",
-    "imagen_url": "imagenes/bergen.webp",
-    "dificultad": "medio"
-  },
-       {
-    "nombre": "Estocolmo",
-    "pais": "Suecia",
-    "imagen_url": "imagenes/estocolmo.webp",
-    "dificultad": "dificil"
-  },
-       {
-    "nombre": "Gotemburgo",
-    "pais": "Suecia",
-    "imagen_url": "imagenes/gotemburgo.webp",
-    "dificultad": "dificil"
-  },
-         {
     "nombre": "Upsala",
     "pais": "Suecia",
     "imagen_url": "imagenes/upsala.webp",
     "dificultad": "dificil"
   },
-         {
-    "nombre": "Split",
-    "pais": "Croacia",
-    "imagen_url": "imagenes/split.webp",
-    "dificultad": "medio"
-  },
-         {
-    "nombre": "Amalfi",
-    "pais": "Italia",
-    "imagen_url": "imagenes/amalfi.webp",
-    "dificultad": "medio"
-  },
-         {
-    "nombre": "Budapest",
-    "pais": "Hungría",
-    "imagen_url": "imagenes/budapest.webp",
-    "dificultad": "medio"
-  },
-      {
-    "nombre": "Bucarest",
-    "pais": "Rumanía",
-    "imagen_url": "imagenes/bucarest.webp",
-    "dificultad": "medio"
-  },
-      {
-    "nombre": "Viena",
-    "pais": "Austria",
-    "imagen_url": "imagenes/viena.webp",
-    "dificultad": "facil"
-  },
-        {
-    "nombre": "Viena",
-    "pais": "Austria",
-    "imagen_url": "imagenes/viena1.webp",
-    "dificultad": "medio"
-  },
-        {
-    "nombre": "Viena",
-    "pais": "Austria",
-    "imagen_url": "imagenes/viena2.webp",
+  {
+    "nombre": "Ushuaia",
+    "pais": "Argentina",
+    "imagen_url": "imagenes/ushuaia.webp",
     "dificultad": "dificil"
   },
-        {
-    "nombre": "Viena",
-    "pais": "Austria",
-    "imagen_url": "imagenes/viena3.webp",
+  {
+    "nombre": "Valencia",
+    "pais": "España",
+    "imagen_url": "imagenes/valencia.webp",
     "dificultad": "facil"
   },
-        {
-    "nombre": "Pisa",
-    "pais": "Italia",
-    "imagen_url": "imagenes/pisa.webp",
-    "dificultad": "facil"
-  },
-        {
-    "nombre": "Florencia",
-    "pais": "Italia",
-    "imagen_url": "imagenes/florencia.webp",
+  {
+    "nombre": "Valencia",
+    "pais": "España",
+    "imagen_url": "imagenes/valencia1.webp",
     "dificultad": "medio"
   },
-        {
-    "nombre": "Florencia",
-    "pais": "Italia",
-    "imagen_url": "imagenes/florencia1.webp",
-    "dificultad": "medio"
+  {
+    "nombre": "Valletta",
+    "pais": "Malta",
+    "imagen_url": "imagenes/valletta.webp",
+    "dificultad": "dificil"
   },
-        {
+  {
     "nombre": "Vaticano",
     "pais": "Ciudad del Vaticano",
     "imagen_url": "imagenes/vaticano.webp",
     "dificultad": "medio"
   },
-        {
-    "nombre": "Roma",
+  {
+    "nombre": "Venecia",
     "pais": "Italia",
-    "imagen_url": "imagenes/roma1.webp",
+    "imagen_url": "imagenes/venecia.webp",
     "dificultad": "facil"
   },
-        {
-    "nombre": "París",
+  {
+    "nombre": "Venecia",
+    "pais": "Italia",
+    "imagen_url": "imagenes/venecia1.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Versalles",
     "pais": "Francia",
-    "imagen_url": "imagenes/paris1.webp",
+    "imagen_url": "imagenes/versalles.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Viena",
+    "pais": "Austria",
+    "imagen_url": "imagenes/viena.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Viena",
+    "pais": "Austria",
+    "imagen_url": "imagenes/viena1.webp",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Viena",
+    "pais": "Austria",
+    "imagen_url": "imagenes/viena2.webp",
     "dificultad": "dificil"
+  },
+  {
+    "nombre": "Viena",
+    "pais": "Austria",
+    "imagen_url": "imagenes/viena3.webp",
+    "dificultad": "facil"
+  },
+  {
+    "nombre": "Zanzíbar",
+    "pais": "Tanzania",
+    "imagen_url": "imagenes/zanzibar.webp",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Zaragoza",
+    "pais": "España",
+    "imagen_url": "imagenes/zaragoza.webp",
+    "dificultad": "medio"
   }
-  
-  
-  
-  
-  
 ]

@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let preguntasFacilesHechas = 0;
     let preguntasMediasHechas = 0;
     let resumenContrarrelojData = []; // Para guardar los datos y ordenarlos al final
-
+    let duracionInicialContrarreloj = 60; // Guardamos la duración inicial para calcular el % de la barra
     let intervaloTimer;
 
     let sonidoActivado = true;
@@ -400,12 +400,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     // --- Lógica del modo Contrarreloj ---
 
     function iniciarTimer() {
+        const barraTiempoContainer = document.getElementById('contenedor-barra-tiempo');
+        const barraTiempo = document.getElementById('barra-tiempo');
+
+        // Hacemos visible y reiniciamos la barra al iniciar el temporizador
+        barraTiempoContainer.style.display = 'block';
+        barraTiempo.style.width = '100%';
+        barraTiempo.classList.remove('critico');
+
         actualizarDisplayTimer(); // Muestra el tiempo inicial
         intervaloTimer = setInterval(() => {
             tiempoRestante--;
             actualizarDisplayTimer();
             if (tiempoRestante <= 0) {
                 clearInterval(intervaloTimer);
+                // Ocultamos la barra cuando el tiempo se acaba
+                barraTiempoContainer.style.display = 'none';
                 
                 if (jugadorActualIndex < jugadores.length - 1) {
                     mostrarPantallaTransicion();
@@ -418,12 +428,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function actualizarDisplayTimer() {
-        contadorJuegoEl.innerHTML = `Tiempo: <span id="numero-ronda">${tiempoRestante}</span>`;
-        // Añadimos o quitamos la clase de peligro si quedan 10 segundos o menos
+        const barraTiempo = document.getElementById('barra-tiempo');
+        contadorJuegoEl.innerHTML = `Tiempo: <span id="tiempo">${tiempoRestante}</span>`; // Cambiado id para ser más específico
+
+        // Actualizamos el ancho de la barra de tiempo
+        const porcentajeRestante = (tiempoRestante / duracionInicialContrarreloj) * 100;
+        barraTiempo.style.width = porcentajeRestante + '%';
+
+        // Lógica para el estado crítico (texto y barra)
         if (tiempoRestante <= 10 && tiempoRestante > 0) {
             contadorJuegoEl.classList.add('timer-danger');
+            barraTiempo.classList.add('critico');
         } else {
             contadorJuegoEl.classList.remove('timer-danger');
+            barraTiempo.classList.remove('critico');
         }
     }
 
@@ -455,7 +473,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     function iniciarTurnoContrarreloj() {
         pantallaTransicionEl.style.display = 'none'; // Ocultamos la pantalla de transición
         jugadorActualIndex++;
-        tiempoRestante = 60; // Reiniciamos el tiempo
+        tiempoRestante = duracionInicialContrarreloj; // Reiniciamos el tiempo
         aciertosTurno = 0; // Reiniciamos contadores
         fallosTurno = 0;
         preguntasFacilesHechas = 0; // Reiniciamos progresión de dificultad
