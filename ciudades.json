@@ -23,109 +23,109 @@
     "imagen_url": "imagenes/sidney.jpg",
     "dificultad": "facil"
   },
-    {
+  {
     "nombre": "Madrid",
     "pais": "España",
     "imagen_url": "imagenes/madrid.jpg",
     "dificultad": "facil"
   },
-     {
+  {
     "nombre": "Madrid",
     "pais": "España",
     "imagen_url": "imagenes/madrid1.jpg",
     "dificultad": "facil"
   },
-     {
+  {
     "nombre": "Madrid",
     "pais": "España",
     "imagen_url": "imagenes/madrid2.jpg",
     "dificultad": "facil"
   },
-     {
+  {
     "nombre": "Madrid",
     "pais": "España",
     "imagen_url": "imagenes/madrid3.jpg",
     "dificultad": "facil"
   },
-     {
+  {
     "nombre": "Madrid",
     "pais": "España",
     "imagen_url": "imagenes/madrid4.jpg",
     "dificultad": "facil"
   },
-     {
+  {
     "nombre": "Madrid",
     "pais": "España",
     "imagen_url": "imagenes/madrid5.jpg",
     "dificultad": "facil"
   },
-     {
+  {
     "nombre": "Madrid",
     "pais": "España",
     "imagen_url": "imagenes/madrid6.jpg",
     "dificultad": "facil"
   },
-   {
+  {
     "nombre": "Sevilla",
     "pais": "España",
     "imagen_url": "imagenes/sevilla.jpg",
     "dificultad": "facil"
   },
-   {
+  {
     "nombre": "Salamanca",
     "pais": "España",
     "imagen_url": "imagenes/salamanca.jpg",
     "dificultad": "facil"
   },
-   {
+  {
     "nombre": "Segovia",
     "pais": "España",
     "imagen_url": "imagenes/segovia.jpg",
     "dificultad": "facil"
   },
-   {
+  {
     "nombre": "Valencia",
     "pais": "España",
     "imagen_url": "imagenes/valencia.jpg",
     "dificultad": "facil"
   },
-   {
+  {
     "nombre": "Granada",
     "pais": "España",
     "imagen_url": "imagenes/granada.jpg",
     "dificultad": "medio"
   },
-   {
+  {
     "nombre": "Segovia",
     "pais": "España",
     "imagen_url": "imagenes/segovia1.jpg",
     "dificultad": "facil"
   },
-   {
+  {
     "nombre": "Barcelona",
     "pais": "España",
     "imagen_url": "imagenes/barcelona2.jpg",
     "dificultad": "facil"
   },
-   {
+  {
     "nombre": "Sevilla",
     "pais": "España",
     "imagen_url": "imagenes/sevilla1.jpg",
     "dificultad": "facil"
   },
-   {
+  {
     "nombre": "Sevilla",
     "pais": "España",
     "imagen_url": "imagenes/sevilla2.jpg",
     "dificultad": "medio"
   },
-   {
+  {
     "nombre": "Córdoba",
     "pais": "España",
     "imagen_url": "imagenes/cordoba.jpg",
     "dificultad": "medio"
   },
-   {
+  {
     "nombre": "Valencia",
     "pais": "España",
     "imagen_url": "imagenes/valencia1.jpg",
@@ -287,7 +287,7 @@
     "imagen_url": "imagenes/venecia.jpg",
     "dificultad": "facil"
   },
-    {
+  {
     "nombre": "Venecia",
     "pais": "Italia",
     "imagen_url": "imagenes/venecia1.jpg",
@@ -299,12 +299,13 @@
     "imagen_url": "imagenes/sanfrancisco.jpg",
     "dificultad": "facil"
   },
-    {
+  {
     "nombre": "San Francisco",
     "pais": "EE.UU.",
     "imagen_url": "imagenes/sanfrancisco1.jpg",
     "dificultad": "facil"
-  },  {
+  },
+  {
     "nombre": "San Francisco",
     "pais": "EE.UU.",
     "imagen_url": "imagenes/sanfrancisco2.jpg",
@@ -316,7 +317,7 @@
     "imagen_url": "imagenes/singapur.jpg",
     "dificultad": "medio"
   },
-    {
+  {
     "nombre": "Singapur",
     "pais": "Singapur",
     "imagen_url": "imagenes/singapur1.jpg",
@@ -334,7 +335,7 @@
     "imagen_url": "imagenes/helsinki.jpg",
     "dificultad": "dificil"
   },
-    {
+  {
     "nombre": "Helsinki",
     "pais": "Finlandia",
     "imagen_url": "imagenes/helsinki1.jpg",
@@ -413,214 +414,219 @@
     "dificultad": "dificil"
   },
   {
-  "nombre": "Bruselas",
-  "pais": "Bélgica",
-  "imagen_url": "imagenes/bruselas.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Bruselas",
-  "pais": "Bélgica",
-  "imagen_url": "imagenes/bruselas1.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Bruselas",
-  "pais": "Bélgica",
-  "imagen_url": "imagenes/bruselas2.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Brujas",
-  "pais": "Bélgica",
-  "imagen_url": "imagenes/brujas.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Brujas",
-  "pais": "Bélgica",
-  "imagen_url": "imagenes/brujas1.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Amberes",
-  "pais": "Bélgica",
-  "imagen_url": "imagenes/amberes.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Amberes",
-  "pais": "Bélgica",
-  "imagen_url": "imagenes/amberes1.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Gante",
-  "pais": "Bélgica",
-  "imagen_url": "imagenes/gante.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Bremen",
-  "pais": "Alemania",
-  "imagen_url": "imagenes/bremen.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Erfurt",
-  "pais": "Alemania",
-  "imagen_url": "imagenes/erfurt.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Marsella",
-  "pais": "Francia",
-  "imagen_url": "imagenes/marsella.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Lyon",
-  "pais": "Francia",
-  "imagen_url": "imagenes/lyon.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Estrasburgo",
-  "pais": "Francia",
-  "imagen_url": "imagenes/estrasburgo.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Reims",
-  "pais": "Francia",
-  "imagen_url": "imagenes/reims.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Amiens",
-  "pais": "Francia",
-  "imagen_url": "imagenes/amiens.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Annecy",
-  "pais": "Francia",
-  "imagen_url": "imagenes/annecy.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Dunkerque",
-  "pais": "Francia",
-  "imagen_url": "imagenes/dunkerque.jpg",
-  "dificultad": "dificil"
-},
-{
-  "nombre": "Versalles",
-  "pais": "Francia",
-  "imagen_url": "imagenes/versalles.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Oporto",
-  "pais": "Portugal",
-  "imagen_url": "imagenes/oporto.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Oporto",
-  "pais": "Portugal",
-  "imagen_url": "imagenes/oporto1.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Oporto",
-  "pais": "Portugal",
-  "imagen_url": "imagenes/oporto2.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Cascais",
-  "pais": "Portugal",
-  "imagen_url": "imagenes/cascais.jpg",
-  "dificultad": "dificil"
-},
-{
-  "nombre": "Aveiro",
-  "pais": "Portugal",
-  "imagen_url": "imagenes/aveiro.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Lisboa",
-  "pais": "Portugal",
-  "imagen_url": "imagenes/lisboa.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Coimbra",
-  "pais": "Portugal",
-  "imagen_url": "imagenes/coimbra.jpg",
-  "dificultad": "dificil"
-},
-{
-  "nombre": "Aveiro",
-  "pais": "Portugal",
-  "imagen_url": "imagenes/aveiro1.jpg",
-  "dificultad": "dificil"
-},
-{
-  "nombre": "Toledo",
-  "pais": "España",
-  "imagen_url": "imagenes/toledo.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Toledo",
-  "pais": "España",
-  "imagen_url": "imagenes/toledo2.jpg",
-  "dificultad": "dificil"
-},
-{
-  "nombre": "Burgos",
-  "pais": "España",
-  "imagen_url": "imagenes/burgos.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Zaragoza",
-  "pais": "España",
-  "imagen_url": "imagenes/zaragoza.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Bilbao",
-  "pais": "España",
-  "imagen_url": "imagenes/bilbao.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Toledo",
-  "pais": "España",
-  "imagen_url": "imagenes/toledo1.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "León",
-  "pais": "España",
-  "imagen_url": "imagenes/leon.jpg",
-  "dificultad": "medio"
-},
-{
-  "nombre": "Girona",
-  "pais": "España",
-  "imagen_url": "imagenes/girona.jpg",
-  "dificultad": "dificil"
-},
-{
-  "nombre": "Santiago",
-  "pais": "España",
-  "imagen_url": "imagenes/santiago.jpg",
-  "dificultad": "medio"
-}
+    "nombre": "Bruselas",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/bruselas.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Bruselas",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/bruselas1.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Bruselas",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/bruselas2.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Brujas",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/brujas.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Brujas",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/brujas1.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Amberes",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/amberes.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Amberes",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/amberes1.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Gante",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/gante.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Bremen",
+    "pais": "Alemania",
+    "imagen_url": "imagenes/bremen.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Erfurt",
+    "pais": "Alemania",
+    "imagen_url": "imagenes/erfurt.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Marsella",
+    "pais": "Francia",
+    "imagen_url": "imagenes/marsella.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Lyon",
+    "pais": "Francia",
+    "imagen_url": "imagenes/lyon.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Estrasburgo",
+    "pais": "Francia",
+    "imagen_url": "imagenes/estrasburgo.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Reims",
+    "pais": "Francia",
+    "imagen_url": "imagenes/reims.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Amiens",
+    "pais": "Francia",
+    "imagen_url": "imagenes/amiens.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Annecy",
+    "pais": "Francia",
+    "imagen_url": "imagenes/annecy.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Dunkerque",
+    "pais": "Francia",
+    "imagen_url": "imagenes/dunkerque.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Versalles",
+    "pais": "Francia",
+    "imagen_url": "imagenes/versalles.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Oporto",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/oporto.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Oporto",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/oporto1.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Oporto",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/oporto2.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Cascais",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/cascais.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Aveiro",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/aveiro.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Lisboa",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/lisboa.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Coimbra",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/coimbra.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Aveiro",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/aveiro1.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Toledo",
+    "pais": "España",
+    "imagen_url": "imagenes/toledo.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Toledo",
+    "pais": "España",
+    "imagen_url": "imagenes/toledo2.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Burgos",
+    "pais": "España",
+    "imagen_url": "imagenes/burgos.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Zaragoza",
+    "pais": "España",
+    "imagen_url": "imagenes/zaragoza.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Bilbao",
+    "pais": "España",
+    "imagen_url": "imagenes/bilbao.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Toledo",
+    "pais": "España",
+    "imagen_url": "imagenes/toledo1.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "León",
+    "pais": "España",
+    "imagen_url": "imagenes/leon.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Girona",
+    "pais": "España",
+    "imagen_url": "imagenes/girona.jpg",
+    "dificultad": "dificil"
+  },
+  {
+    "nombre": "Santiago",
+    "pais": "España",
+    "imagen_url": "imagenes/santiago.jpg",
+    "dificultad": "medio"
+  },
+  {
+    "nombre": "Cáceres",
+    "pais": "España",
+    "imagen_url": "imagenes/caceres.jpg",
+    "dificultad": "medio"
+  }
 ]
-
