@@ -200,23 +200,25 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    function verificarRespuesta(esCorrecta) {
+    async function verificarRespuesta(esCorrecta) {
         // Deshabilitar botones de opción
         document.querySelectorAll('#opciones-container button').forEach(btn => btn.disabled = true);
 
         const puntos = obtenerPuntosPorDificultad();
         solucionContainer.classList.remove('correcto', 'incorrecto'); // Limpiar clases de color previas
 
+        const flagHtml = await fetchCountryFlag(ciudadActual.pais);
+
         if (esCorrecta) {
             jugadores[jugadorActualIndex].puntuacion += puntos;
-            solucionContainer.textContent = `${ciudadActual.nombre} (${ciudadActual.pais}) +${puntos}`;
+            solucionContainer.innerHTML = `${ciudadActual.nombre} (${ciudadActual.pais}) ${flagHtml} +${puntos}`;
             solucionContainer.classList.add('correcto');
             if (sonidoActivado) sonidoCorrecto.play(); // ¡Suena el acierto!
             if (esModoContrarreloj) {
                 aciertosTurno++;
             }
         } else {
-            solucionContainer.textContent = `${ciudadActual.nombre} (${ciudadActual.pais})`;
+            solucionContainer.innerHTML = `${ciudadActual.nombre} (${ciudadActual.pais}) ${flagHtml}`;
             solucionContainer.classList.add('incorrecto');
             if (sonidoActivado) sonidoIncorrecto.play(); // ¡Suena el error!
             // Añadimos la ciudad a la lista de falladas para el dato curioso
@@ -555,6 +557,58 @@ document.addEventListener('DOMContentLoaded', async () => {
         dificultadDisplay.textContent = `${dificultadActualRonda.toUpperCase()} +${puntos}`;
     }
     
+    // Función para obtener la bandera del país
+    async function fetchCountryFlag(countryNameSpanish) {
+        const englishCountryName = getEnglishCountryName(countryNameSpanish);
+        try {
+            const response = await fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(englishCountryName)}?fields=flags`);
+            if (response.ok) {
+                const data = await response.json();
+                // La API puede devolver múltiples resultados, tomamos el primero
+                if (data && data.length > 0 && data[0].flags && data[0].flags.png) {
+                    return `<img src="${data[0].flags.png}" alt="Bandera de ${countryNameSpanish}" class="flag-icon">`;
+                }
+            }
+            // Si no se encuentra la bandera o hay un error, no devolvemos nada
+            return '';
+        } catch (error) {
+            console.error(`Error al obtener la bandera para ${countryNameSpanish}:`, error);
+            return '';
+        }
+    }
+
+    // Función para mapear nombres de países en español a inglés para la API
+    function getEnglishCountryName(spanishName) {
+        const countryMap = {
+            "España": "Spain",
+            "Países Bajos": "Netherlands",
+            "EE.UU.": "United States",
+            "Estados Unidos": "United States",
+            "Reino Unido": "United Kingdom",
+            "República Checa": "Czech Republic",
+            "Ciudad del Vaticano": "Vatican City",
+            "Emiratos Árabes Unidos": "United Arab Emirates",
+            "Marruecos": "Morocco",
+            "Myanmar": "Myanmar",
+            "Laos": "Laos",
+            "Mali": "Mali",
+            "Uzbekistán": "Uzbekistan",
+            "Tanzania": "Tanzania",
+            "Eslovenia": "Slovenia",
+            "Hungría": "Hungary",
+            "Rumanía": "Romania",
+            "Dinamarca": "Denmark",
+            "Croacia": "Croatia",
+            "Finlandia": "Finland",
+            "Suecia": "Sweden",
+            "Noruega": "Norway",
+            "Bélgica": "Belgium",
+            "Alemania": "Germany",
+            "Francia": "France" // Agrega más si encuentras problemas con otros nombres
+        };
+        return countryMap[spanishName] || spanishName; // Devuelve el nombre mapeado o el original si no se encuentra
+    }
+
     function actualizarTablaResumen(datos) {
         const tbodyResumenEl = document.getElementById('tbody-resumen-contrarreloj');
         tbodyResumenEl.innerHTML = ''; // Limpiamos la tabla antes de rellenarla
