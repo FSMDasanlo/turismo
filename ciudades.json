@@ -802,5 +802,252 @@
     "pais": "España",
     "imagen_url": "imagenes/zaragoza.webp",
     "dificultad": "medio"
+  },
+    {
+    "nombre": "Agra",
+    "pais": "India",
+    "imagen_url": "imagenes/agra.webp",
+    "dificultad": "medio"
+  },
+      {
+    "nombre": "Albarracin",
+    "pais": "España",
+    "imagen_url": "imagenes/albarracin.webp",
+    "dificultad": "medio"
+  },
+      {
+    "nombre": "Barcelona",
+    "pais": "España",
+    "imagen_url": "imagenes/barcelona3.webp",
+    "dificultad": "medio"
+  },
+      {
+    "nombre": "Chicago",
+    "pais": "Estados Unidos",
+    "imagen_url": "imagenes/chicago1.webp",
+    "dificultad": "dificil"
+  },
+      {
+    "nombre": "Ciudad de  México",
+    "pais": "México",
+    "imagen_url": "imagenes/ciudaddemexico.webp",
+    "dificultad": "dificil"
+  },
+      {
+    "nombre": "Ciudad de México",
+    "pais": "México",
+    "imagen_url": "imagenes/ciudaddemexico1.webp",
+    "dificultad": "medio"
+  },
+      {
+    "nombre": "Córdoba",
+    "pais": "España",
+    "imagen_url": "imagenes/cordoba1.webp",
+    "dificultad": "dificil"
+  },
+      {
+    "nombre": "La Coruña",
+    "pais": "España",
+    "imagen_url": "imagenes/coruna.webp",
+    "dificultad": "dificil"
+  },
+      {
+    "nombre": "Dublin",
+    "pais": "Irlanda",
+    "imagen_url": "imagenes/dublin.webp",
+    "dificultad": "dificil"
+  },
+      {
+    "nombre": "Elsinor",
+    "pais": "Dinamarca",
+    "imagen_url": "imagenes/elsinor.webp",
+    "dificultad": "dificil"
+  },
+      {
+    "nombre": "Jaen",
+    "pais": "España",
+    "imagen_url": "imagenes/jaen.webp",
+    "dificultad": "dificil"
+  },
+      {
+    "nombre": "Jaipur",
+    "pais": "India",
+    "imagen_url": "imagenes/jaipur.webp",
+    "dificultad": "dificil"
+  },
+      {
+    "nombre": "Lisboa",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/lisboa1.webp",
+    "dificultad": "medio"
+  },
+      {
+    "nombre": "Londres",
+    "pais": "Reino Unido",
+    "imagen_url": "imagenes/londres1.webp",
+    "dificultad": "medio"
+  },
+      {
+    "nombre": "Londres",
+    "pais": "Reino Unido",
+    "imagen_url": "imagenes/londres1.webp",
+    "dificultad": "medio"
+  },
+        {
+    "nombre": "Londres",
+    "pais": "Reino Unido",
+    "imagen_url": "imagenes/londres2.webp",
+    "dificultad": "medio"
+  },
+        {
+    "nombre": "Londres",
+    "pais": "Reino Unido",
+    "imagen_url": "imagenes/londres3.webp",
+    "dificultad": "medio"
+  },
+        {
+    "nombre": "Londres",
+    "pais": "Reino Unido",
+    "imagen_url": "imagenes/londres4.webp",
+    "dificultad": "dificil"
+  },
+        {
+    "nombre": "Londres",
+    "pais": "Reino Unido",
+    "imagen_url": "imagenes/londres5.webp",
+    "dificultad": "facil"
+  },
+        {
+    "nombre": "Los Angeles",
+    "pais": "Estados Unidos",
+    "imagen_url": "imagenes/losangeles.webp",
+    "dificultad": "medio"
+  },
+        {
+    "nombre": "Bruselas",
+    "pais": "Bélgica",
+    "imagen_url": "imagenes/manneken.webp",
+    "dificultad": "facil"
+  },
+        {
+    "nombre": "Mérida",
+    "pais": "España",
+    "imagen_url": "imagenes/merida_ex.webp",
+    "dificultad": "dificil"
+  },
+          {
+    "nombre": "Mérida",
+    "pais": "España",
+    "imagen_url": "imagenes/merida1.webp",
+    "dificultad": "dificil"
+  },
+          {
+    "nombre": "Mérida",
+    "pais": "España",
+    "imagen_url": "imagenes/merida2_ex.webp",
+    "dificultad": "dificil"
+  },
+        {
+    "nombre": "Milán",
+    "pais": "Italia",
+    "imagen_url": "imagenes/milan.webp",
+    "dificultad": "facil"
+  },
+          {
+    "nombre": "Morella",
+    "pais": "España",
+    "imagen_url": "imagenes/morella.webp",
+    "dificultad": "dificil"
+  },
+          {
+    "nombre": "Mumbay",
+    "pais": "India",
+    "imagen_url": "imagenes/mumbay.webp",
+    "dificultad": "dificil"
+  },
+          {
+    "nombre": "New York",
+    "pais": "Estados Unidos",
+    "imagen_url": "imagenes/newyork1.webp",
+    "dificultad": "facil"
+  },
+          {
+    "nombre": "Olite",
+    "pais": "España",
+    "imagen_url": "imagenes/olite_nav.webp",
+    "dificultad": "dificil"
+  },
+          {
+    "nombre": "Oporto",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/oporto3.webp",
+    "dificultad": "dificil"
+  },
+          {
+    "nombre": "París",
+    "pais": "Francia",
+    "imagen_url": "imagenes/paris2.webp",
+    "dificultad": "medio"
+  },
+          {
+    "nombre": "París",
+    "pais": "Francia",
+    "imagen_url": "imagenes/paris3.webp",
+    "dificultad": "medio"
+  },
+          {
+    "nombre": "París",
+    "pais": "Francia",
+    "imagen_url": "imagenes/paris4.webp",
+    "dificultad": "medio"
+  },
+            {
+    "nombre": "París",
+    "pais": "Francia",
+    "imagen_url": "imagenes/paris5.webp",
+    "dificultad": "medio"
+  },
+            {
+    "nombre": "París",
+    "pais": "Francia",
+    "imagen_url": "imagenes/paris6.webp",
+    "dificultad": "medio"
+  },
+            {
+    "nombre": "San Sebastián",
+    "pais": "España",
+    "imagen_url": "imagenes/sansebastian.webp",
+    "dificultad": "medio"
+  },
+            {
+    "nombre": "Sintra",
+    "pais": "Portugal",
+    "imagen_url": "imagenes/sintra.webp",
+    "dificultad": "dificil"
+  },
+            {
+    "nombre": "Copenhague",
+    "pais": "Dinamarca",
+    "imagen_url": "imagenes/sirenita.webp",
+    "dificultad": "facil"
+  },
+            {
+    "nombre": "Toledo",
+    "pais": "España",
+    "imagen_url": "imagenes/toledo3.webp",
+    "dificultad": "medio"
+  },
+            {
+    "nombre": "Valencia",
+    "pais": "España",
+    "imagen_url": "imagenes/valencia2.webp",
+    "dificultad": "medio"
+  },
+            {
+    "nombre": "Washington",
+    "pais": "Estados Unidos",
+    "imagen_url": "imagenes/washington.webp",
+    "dificultad": "medio"
   }
+
 ]
