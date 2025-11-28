@@ -3,1051 +3,1226 @@
     "nombre": "Alesund",
     "pais": "Noruega",
     "imagen_url": "imagenes/alesund.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Amalfi",
     "pais": "Italia",
     "imagen_url": "imagenes/amalfi.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Amberes",
     "pais": "Bélgica",
     "imagen_url": "imagenes/amberes.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Amberes",
     "pais": "Bélgica",
     "imagen_url": "imagenes/amberes1.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Amiens",
     "pais": "Francia",
     "imagen_url": "imagenes/amiens.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Ámsterdam",
     "pais": "Países Bajos",
     "imagen_url": "imagenes/amsterdam.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Angkor Wat",
     "pais": "Camboya",
     "imagen_url": "imagenes/angkorwat.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Asia"
   },
   {
     "nombre": "Annecy",
     "pais": "Francia",
     "imagen_url": "imagenes/annecy.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Astorga",
     "pais": "España",
     "imagen_url": "imagenes/astorga.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Astorga",
     "pais": "España",
     "imagen_url": "imagenes/astorga1.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Atenas",
     "pais": "Grecia",
     "imagen_url": "imagenes/atenas.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Aveiro",
     "pais": "Portugal",
     "imagen_url": "imagenes/aveiro.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Aveiro",
     "pais": "Portugal",
     "imagen_url": "imagenes/aveiro1.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Bagan",
     "pais": "Myanmar",
     "imagen_url": "imagenes/bagan.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Asia"
   },
   {
     "nombre": "Bangkok",
     "pais": "Tailandia",
     "imagen_url": "imagenes/bangkok.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Asia"
   },
   {
     "nombre": "Barcelona",
     "pais": "España",
     "imagen_url": "imagenes/barcelona2.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Bergen",
     "pais": "Noruega",
     "imagen_url": "imagenes/bergen.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Berlín",
     "pais": "Alemania",
     "imagen_url": "imagenes/berlin.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Bilbao",
     "pais": "España",
     "imagen_url": "imagenes/bilbao.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Bremen",
     "pais": "Alemania",
     "imagen_url": "imagenes/bremen.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Brujas",
     "pais": "Bélgica",
     "imagen_url": "imagenes/brujas.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Brujas",
     "pais": "Bélgica",
     "imagen_url": "imagenes/brujas1.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Bruselas",
     "pais": "Bélgica",
     "imagen_url": "imagenes/bruselas.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Bruselas",
     "pais": "Bélgica",
     "imagen_url": "imagenes/bruselas1.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Bruselas",
     "pais": "Bélgica",
     "imagen_url": "imagenes/bruselas2.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Bucarest",
     "pais": "Rumanía",
     "imagen_url": "imagenes/bucarest.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Budapest",
     "pais": "Hungría",
     "imagen_url": "imagenes/budapest.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Buenos Aires",
     "pais": "Argentina",
     "imagen_url": "imagenes/buenosaires.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "América del Sur"
   },
   {
     "nombre": "Burgos",
     "pais": "España",
     "imagen_url": "imagenes/burgos.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Cáceres",
     "pais": "España",
     "imagen_url": "imagenes/caceres.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Cascais",
     "pais": "Portugal",
     "imagen_url": "imagenes/cascais.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Chicago",
     "pais": "EE.UU.",
     "imagen_url": "imagenes/chicago.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "América del Norte"
   },
   {
     "nombre": "Ciudad del Cabo",
     "pais": "Sudáfrica",
     "imagen_url": "imagenes/ciudaddelcabo.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "África"
   },
   {
     "nombre": "Coimbra",
     "pais": "Portugal",
     "imagen_url": "imagenes/coimbra.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Copenhague",
     "pais": "Dinamarca",
     "imagen_url": "imagenes/copenhague.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Copenhague",
     "pais": "Dinamarca",
     "imagen_url": "imagenes/copenhague1.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Córdoba",
     "pais": "España",
     "imagen_url": "imagenes/cordoba.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Cusco",
     "pais": "Perú",
     "imagen_url": "imagenes/cusco.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "América del Sur"
   },
   {
     "nombre": "Dubái",
     "pais": "Emiratos Árabes Unidos",
     "imagen_url": "imagenes/dubai.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Asia"
   },
   {
     "nombre": "Dubrovnik",
     "pais": "Croacia",
     "imagen_url": "imagenes/dubrovnik.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Dunkerque",
     "pais": "Francia",
     "imagen_url": "imagenes/dunkerque.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "El Cairo",
     "pais": "Egipto",
     "imagen_url": "imagenes/cairo.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "África"
   },
   {
     "nombre": "Erfurt",
     "pais": "Alemania",
     "imagen_url": "imagenes/erfurt.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Estambul",
     "pais": "Turquía",
     "imagen_url": "imagenes/estambul.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Asia"
   },
   {
     "nombre": "Estocolmo",
     "pais": "Suecia",
     "imagen_url": "imagenes/estocolmo.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Estrasburgo",
     "pais": "Francia",
     "imagen_url": "imagenes/estrasburgo.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Florencia",
     "pais": "Italia",
     "imagen_url": "imagenes/florencia.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Florencia",
     "pais": "Italia",
     "imagen_url": "imagenes/florencia1.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Gante",
     "pais": "Bélgica",
     "imagen_url": "imagenes/gante.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Girona",
     "pais": "España",
     "imagen_url": "imagenes/girona.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Gotemburgo",
     "pais": "Suecia",
     "imagen_url": "imagenes/gotemburgo.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Granada",
     "pais": "España",
     "imagen_url": "imagenes/granada.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Helsinki",
     "pais": "Finlandia",
     "imagen_url": "imagenes/helsinki.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Helsinki",
     "pais": "Finlandia",
     "imagen_url": "imagenes/helsinki1.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Katmandú",
     "pais": "Nepal",
     "imagen_url": "imagenes/katmandu.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Asia"
   },
   {
     "nombre": "Kyoto",
     "pais": "Japón",
     "imagen_url": "imagenes/kyoto.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Asia"
   },
   {
     "nombre": "Las Vegas",
     "pais": "Estados Unidos",
     "imagen_url": "imagenes/lasvegas.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "América del Norte"
   },
   {
     "nombre": "León",
     "pais": "España",
     "imagen_url": "imagenes/leon.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Lhasa",
     "pais": "China",
     "imagen_url": "imagenes/lhasa.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Asia"
   },
   {
     "nombre": "Lisboa",
     "pais": "Portugal",
     "imagen_url": "imagenes/lisboa.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Liubliana",
     "pais": "Eslovenia",
     "imagen_url": "imagenes/liubliana.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Londres",
     "pais": "Reino Unido",
     "imagen_url": "imagenes/londres.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Luang Prabang",
     "pais": "Laos",
     "imagen_url": "imagenes/luangprabang.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Asia"
   },
   {
     "nombre": "Lyon",
     "pais": "Francia",
     "imagen_url": "imagenes/lyon.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Madrid",
     "pais": "España",
     "imagen_url": "imagenes/madrid.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Madrid",
     "pais": "España",
     "imagen_url": "imagenes/madrid1.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Madrid",
     "pais": "España",
     "imagen_url": "imagenes/madrid2.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Madrid",
     "pais": "España",
     "imagen_url": "imagenes/madrid3.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Madrid",
     "pais": "España",
     "imagen_url": "imagenes/madrid4.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Madrid",
     "pais": "España",
     "imagen_url": "imagenes/madrid5.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Madrid",
     "pais": "España",
     "imagen_url": "imagenes/madrid6.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Marrakech",
     "pais": "Marruecos",
     "imagen_url": "imagenes/marrakech.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "África"
   },
   {
     "nombre": "Marsella",
     "pais": "Francia",
     "imagen_url": "imagenes/marsella.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Moscú",
     "pais": "Rusia",
     "imagen_url": "imagenes/moscu.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Nueva York",
     "pais": "EE.UU.",
     "imagen_url": "imagenes/newyork.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "América del Norte"
   },
   {
     "nombre": "Nueva York",
     "pais": "EE.UU.",
     "imagen_url": "imagenes/nuevayork.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "América del Norte"
   },
   {
     "nombre": "Oporto",
     "pais": "Portugal",
     "imagen_url": "imagenes/oporto.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Oporto",
     "pais": "Portugal",
     "imagen_url": "imagenes/oporto1.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Oporto",
     "pais": "Portugal",
     "imagen_url": "imagenes/oporto2.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "París",
     "pais": "Francia",
     "imagen_url": "imagenes/paris.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "París",
     "pais": "Francia",
     "imagen_url": "imagenes/paris1.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Pekín",
     "pais": "China",
     "imagen_url": "imagenes/pekin.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Asia"
   },
   {
     "nombre": "Petra",
     "pais": "Jordania",
     "imagen_url": "imagenes/petra.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Asia"
   },
   {
     "nombre": "Pisa",
     "pais": "Italia",
     "imagen_url": "imagenes/pisa.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Praga",
     "pais": "República Checa",
     "imagen_url": "imagenes/praga.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Quito",
     "pais": "Ecuador",
     "imagen_url": "imagenes/quito.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "América del Sur"
   },
   {
     "nombre": "Reims",
     "pais": "Francia",
     "imagen_url": "imagenes/reims.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Reikiavik",
     "pais": "Islandia",
     "imagen_url": "imagenes/reikiavik.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Río de Janeiro",
     "pais": "Brasil",
     "imagen_url": "imagenes/rio.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "América del Sur"
   },
   {
     "nombre": "Río de Janeiro",
     "pais": "Brasil",
     "imagen_url": "imagenes/rio1.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "América del Sur"
   },
   {
     "nombre": "Roma",
     "pais": "Italia",
     "imagen_url": "imagenes/roma.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Roma",
     "pais": "Italia",
     "imagen_url": "imagenes/roma1.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Sabannah",
     "pais": "Estados Unidos",
     "imagen_url": "imagenes/sabannah.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "América del Norte"
   },
   {
     "nombre": "Salamanca",
     "pais": "España",
     "imagen_url": "imagenes/salamanca.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Samarcanda",
     "pais": "Uzbekistán",
     "imagen_url": "imagenes/samarcanda.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Asia"
   },
   {
     "nombre": "San Francisco",
     "pais": "EE.UU.",
     "imagen_url": "imagenes/sanfrancisco.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "América del Norte"
   },
   {
     "nombre": "San Francisco",
     "pais": "EE.UU.",
     "imagen_url": "imagenes/sanfrancisco1.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "América del Norte"
   },
   {
     "nombre": "San Francisco",
     "pais": "EE.UU.",
     "imagen_url": "imagenes/sanfrancisco2.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "América del Norte"
   },
   {
     "nombre": "Santiago",
     "pais": "España",
     "imagen_url": "imagenes/santiago.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Seúl",
     "pais": "Corea del Sur",
     "imagen_url": "imagenes/seul.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Asia"
   },
   {
     "nombre": "Segovia",
     "pais": "España",
     "imagen_url": "imagenes/segovia.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Segovia",
     "pais": "España",
     "imagen_url": "imagenes/segovia1.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Sevilla",
     "pais": "España",
     "imagen_url": "imagenes/sevilla.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Sevilla",
     "pais": "España",
     "imagen_url": "imagenes/sevilla1.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Sevilla",
     "pais": "España",
     "imagen_url": "imagenes/sevilla2.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Sidney",
     "pais": "Australia",
     "imagen_url": "imagenes/sidney.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Oceanía"
   },
   {
     "nombre": "Singapur",
     "pais": "Singapur",
     "imagen_url": "imagenes/singapur.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Asia"
   },
   {
     "nombre": "Singapur",
     "pais": "Singapur",
     "imagen_url": "imagenes/singapur1.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Asia"
   },
   {
     "nombre": "Split",
     "pais": "Croacia",
     "imagen_url": "imagenes/split.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Timbuktu",
     "pais": "Mali",
     "imagen_url": "imagenes/timbuktu.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "África"
   },
   {
     "nombre": "Tokio",
     "pais": "Japón",
     "imagen_url": "imagenes/tokio.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Asia"
   },
   {
     "nombre": "Toledo",
     "pais": "España",
     "imagen_url": "imagenes/toledo.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Toledo",
     "pais": "España",
     "imagen_url": "imagenes/toledo2.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Burgos",
     "pais": "España",
     "imagen_url": "imagenes/burgos.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Zaragoza",
     "pais": "España",
     "imagen_url": "imagenes/zaragoza.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Bilbao",
     "pais": "España",
     "imagen_url": "imagenes/bilbao.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Toledo",
     "pais": "España",
     "imagen_url": "imagenes/toledo1.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Traid",
     "pais": "España",
     "imagen_url": "imagenes/traid.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Traid",
     "pais": "España",
     "imagen_url": "imagenes/traid1.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Upsala",
     "pais": "Suecia",
     "imagen_url": "imagenes/upsala.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Ushuaia",
     "pais": "Argentina",
     "imagen_url": "imagenes/ushuaia.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "América del Sur"
   },
   {
     "nombre": "Valencia",
     "pais": "España",
     "imagen_url": "imagenes/valencia.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Valencia",
     "pais": "España",
     "imagen_url": "imagenes/valencia1.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Valletta",
     "pais": "Malta",
     "imagen_url": "imagenes/valletta.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Vaticano",
     "pais": "Ciudad del Vaticano",
     "imagen_url": "imagenes/vaticano.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Venecia",
     "pais": "Italia",
     "imagen_url": "imagenes/venecia.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Venecia",
     "pais": "Italia",
     "imagen_url": "imagenes/venecia1.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Versalles",
     "pais": "Francia",
     "imagen_url": "imagenes/versalles.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Viena",
     "pais": "Austria",
     "imagen_url": "imagenes/viena.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Viena",
     "pais": "Austria",
     "imagen_url": "imagenes/viena1.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
   {
     "nombre": "Viena",
     "pais": "Austria",
     "imagen_url": "imagenes/viena2.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
   {
     "nombre": "Viena",
     "pais": "Austria",
     "imagen_url": "imagenes/viena3.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
   {
     "nombre": "Zanzíbar",
     "pais": "Tanzania",
     "imagen_url": "imagenes/zanzibar.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "África"
   },
   {
     "nombre": "Zaragoza",
     "pais": "España",
     "imagen_url": "imagenes/zaragoza.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
     {
     "nombre": "Agra",
     "pais": "India",
     "imagen_url": "imagenes/agra.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Asia"
   },
       {
     "nombre": "Albarracin",
     "pais": "España",
     "imagen_url": "imagenes/albarracin.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
       {
     "nombre": "Barcelona",
     "pais": "España",
     "imagen_url": "imagenes/barcelona3.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
       {
     "nombre": "Chicago",
     "pais": "Estados Unidos",
     "imagen_url": "imagenes/chicago1.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "América del Norte"
   },
       {
     "nombre": "Ciudad de  México",
     "pais": "México",
     "imagen_url": "imagenes/ciudaddemexico.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "América del Norte"
   },
       {
     "nombre": "Ciudad de México",
     "pais": "México",
     "imagen_url": "imagenes/ciudaddemexico1.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "América del Norte"
   },
       {
     "nombre": "Córdoba",
     "pais": "España",
     "imagen_url": "imagenes/cordoba1.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
       {
     "nombre": "La Coruña",
     "pais": "España",
     "imagen_url": "imagenes/coruna.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
       {
     "nombre": "Dublin",
     "pais": "Irlanda",
     "imagen_url": "imagenes/dublin.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
       {
     "nombre": "Elsinor",
     "pais": "Dinamarca",
     "imagen_url": "imagenes/elsinor.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
       {
     "nombre": "Jaen",
     "pais": "España",
     "imagen_url": "imagenes/jaen.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
       {
     "nombre": "Jaipur",
     "pais": "India",
     "imagen_url": "imagenes/jaipur.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Asia"
   },
       {
     "nombre": "Lisboa",
     "pais": "Portugal",
     "imagen_url": "imagenes/lisboa1.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
       {
     "nombre": "Londres",
     "pais": "Reino Unido",
     "imagen_url": "imagenes/londres1.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
       {
     "nombre": "Londres",
     "pais": "Reino Unido",
     "imagen_url": "imagenes/londres1.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
         {
     "nombre": "Londres",
     "pais": "Reino Unido",
     "imagen_url": "imagenes/londres2.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
         {
     "nombre": "Londres",
     "pais": "Reino Unido",
     "imagen_url": "imagenes/londres3.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
         {
     "nombre": "Londres",
     "pais": "Reino Unido",
     "imagen_url": "imagenes/londres4.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
         {
     "nombre": "Londres",
     "pais": "Reino Unido",
     "imagen_url": "imagenes/londres5.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
         {
     "nombre": "Los Angeles",
     "pais": "Estados Unidos",
     "imagen_url": "imagenes/losangeles.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "América del Norte"
   },
         {
     "nombre": "Bruselas",
     "pais": "Bélgica",
     "imagen_url": "imagenes/manneken.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
         {
     "nombre": "Mérida",
     "pais": "España",
     "imagen_url": "imagenes/merida_ex.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
           {
     "nombre": "Mérida",
     "pais": "España",
     "imagen_url": "imagenes/merida1.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
           {
     "nombre": "Mérida",
     "pais": "España",
     "imagen_url": "imagenes/merida2_ex.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
         {
     "nombre": "Milán",
     "pais": "Italia",
     "imagen_url": "imagenes/milan.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
           {
     "nombre": "Morella",
     "pais": "España",
     "imagen_url": "imagenes/morella.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
           {
     "nombre": "Mumbay",
     "pais": "India",
     "imagen_url": "imagenes/mumbay.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Asia"
   },
           {
     "nombre": "New York",
     "pais": "Estados Unidos",
     "imagen_url": "imagenes/newyork1.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "América del Norte"
   },
           {
     "nombre": "Olite",
     "pais": "España",
     "imagen_url": "imagenes/olite_nav.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
           {
     "nombre": "Oporto",
     "pais": "Portugal",
     "imagen_url": "imagenes/oporto3.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
           {
     "nombre": "París",
     "pais": "Francia",
     "imagen_url": "imagenes/paris2.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
           {
     "nombre": "París",
     "pais": "Francia",
     "imagen_url": "imagenes/paris3.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
           {
     "nombre": "París",
     "pais": "Francia",
     "imagen_url": "imagenes/paris4.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
             {
     "nombre": "París",
     "pais": "Francia",
     "imagen_url": "imagenes/paris5.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
             {
     "nombre": "París",
     "pais": "Francia",
     "imagen_url": "imagenes/paris6.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
             {
     "nombre": "San Sebastián",
     "pais": "España",
     "imagen_url": "imagenes/sansebastian.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
             {
     "nombre": "Sintra",
     "pais": "Portugal",
     "imagen_url": "imagenes/sintra.webp",
-    "dificultad": "dificil"
+    "dificultad": "dificil",
+    "continente": "Europa"
   },
             {
     "nombre": "Copenhague",
     "pais": "Dinamarca",
     "imagen_url": "imagenes/sirenita.webp",
-    "dificultad": "facil"
+    "dificultad": "facil",
+    "continente": "Europa"
   },
             {
     "nombre": "Toledo",
     "pais": "España",
     "imagen_url": "imagenes/toledo3.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
             {
     "nombre": "Valencia",
     "pais": "España",
     "imagen_url": "imagenes/valencia2.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "Europa"
   },
             {
     "nombre": "Washington",
     "pais": "Estados Unidos",
     "imagen_url": "imagenes/washington.webp",
-    "dificultad": "medio"
+    "dificultad": "medio",
+    "continente": "América del Norte"
   }
 
 ]

@@ -143,22 +143,41 @@ document.addEventListener('DOMContentLoaded', async () => {
         ciudadActual = ciudadesDisponibles[Math.floor(Math.random() * ciudadesDisponibles.length)];
         ciudadesMostradas.push(ciudadActual);
 
-        // --- LÓGICA MEJORADA PARA LAS OPCIONES ---
-        // 1. Crear un "pool" de opciones incorrectas de la MISMA dificultad.
-        const poolOpcionesIncorrectas = ciudades.filter(c => 
-            c.dificultad === dificultadActualRonda && c.nombre !== ciudadActual.nombre
+        // --- LÓGICA MEJORADA PARA LAS OPCIONES (País -> Continente -> Dificultad) ---
+        const opciones = [ciudadActual];
+        let poolOpcionesIncorrectas = [];
+
+        // 1. Intentar encontrar opciones del MISMO PAÍS (sin importar dificultad)
+        poolOpcionesIncorrectas = ciudades.filter(c => 
+            c.pais === ciudadActual.pais && c.nombre !== ciudadActual.nombre
         );
 
-        // 2. Comprobar si hay suficientes ciudades en esa dificultad para crear el juego.
+        // 2. Si no hay suficientes, buscar en el MISMO CONTINENTE (sin importar dificultad)
         if (poolOpcionesIncorrectas.length < 2) {
-            alert(`No hay suficientes ciudades en la dificultad "${dificultadActualRonda}" para generar un juego justo. Se necesitan al menos 3. Se cambiará de nivel.`);
+            const opcionesContinente = ciudades.filter(c => 
+                c.continente === ciudadActual.continente && c.nombre !== ciudadActual.nombre
+            );
+            // Usamos un Set para evitar duplicados si algunas ciudades ya estaban en el pool de país
+            poolOpcionesIncorrectas = [...new Set([...poolOpcionesIncorrectas, ...opcionesContinente])];
+        }
+
+        // 3. Como último recurso, rellenar con la MISMA DIFICULTAD (lógica anterior)
+        if (poolOpcionesIncorrectas.length < 2) {
+            const opcionesDificultad = ciudades.filter(c => 
+                c.dificultad === dificultadActualRonda && c.nombre !== ciudadActual.nombre
+            );
+            poolOpcionesIncorrectas = [...new Set([...poolOpcionesIncorrectas, ...opcionesDificultad])];
+        }
+
+        // Comprobar si, después de todo, tenemos suficientes opciones.
+        if (poolOpcionesIncorrectas.length < 2) {
+            alert(`No hay suficientes ciudades para generar opciones para "${ciudadActual.nombre}". Se intentará con otra ciudad.`);
             seleccionarDificultadAleatoria(); // Cambiamos de nivel
             mostrarPregunta(); // E intentamos de nuevo
             return;
         }
 
-        // 3. Elegir las opciones incorrectas de ese "pool".
-        const opciones = [ciudadActual];
+        // Elegir 2 opciones incorrectas del pool que hemos creado
         while (opciones.length < 3) {
             const opcionAleatoria = poolOpcionesIncorrectas[Math.floor(Math.random() * poolOpcionesIncorrectas.length)];
             if (!opciones.some(opt => opt.nombre === opcionAleatoria.nombre)) { // Evitar duplicados
