@@ -15,11 +15,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     const tituloTransicionEl = document.getElementById('titulo-transicion');
     const btnSiguienteJugador = document.getElementById('btn-siguiente-jugador');
 
+    // --- API Keys ---
+    // IMPORTANTE: Pega aquí tu API Key de OpenWeatherMap.
+    const OPENWEATHER_API_KEY = '027a67e8eee987d305a58e66caa8f448'; 
+
     // Estado del juego
     const esModoContrarreloj = urlParams.get('modo') === 'contrarreloj';
     let ciudades = [];
     let ciudadActual = null;
     let ciudadesMostradas = []; // Guardará los objetos de ciudad completos para evitar repetición de imágenes.
+    let userLocation = null; // Para guardar la ubicación del usuario
     let jugadores = [];
     let jugadorActualIndex = 0;
     let dificultadActualRonda = ''; // 1. Variable para la dificultad de la ronda
@@ -58,6 +63,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Carga los jugadores y prepara la interfaz
     cargarJugadores();
     inicializarSonido(); // Carga la preferencia de sonido del usuario
+    solicitarUbicacionUsuario(); // Pide la ubicación al usuario al iniciar
 
     btnSonido.onclick = toggleSonido; // Asignamos el evento al botón
     btnSiguienteJugador.onclick = iniciarTurnoContrarreloj;
@@ -205,20 +211,29 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.querySelectorAll('#opciones-container button').forEach(btn => btn.disabled = true);
 
         const puntos = obtenerPuntosPorDificultad();
-        solucionContainer.classList.remove('correcto', 'incorrecto'); // Limpiar clases de color previas
+        const [flagHtml, weatherData] = await Promise.all([
+            fetchCountryFlag(ciudadActual.pais),
+            fetchWeather(ciudadActual.nombre, ciudadActual.pais) // Pasamos también el país
+        ]);
 
-        const flagHtml = await fetchCountryFlag(ciudadActual.pais);
+        let distanciaHtml = '';
+        if (userLocation && weatherData.coords) {
+            const distancia = calcularDistancia(userLocation.latitude, userLocation.longitude, weatherData.coords.lat, weatherData.coords.lon);
+            distanciaHtml = `<span title="Distancia desde tu ubicación">📍 ${distancia.toLocaleString('es-ES', { maximumFractionDigits: 0 })} km</span>`;
+        }
+
+        solucionContainer.classList.remove('correcto', 'incorrecto'); // Limpiar clases de color previas
 
         if (esCorrecta) {
             jugadores[jugadorActualIndex].puntuacion += puntos;
-            solucionContainer.innerHTML = `${ciudadActual.nombre} (${ciudadActual.pais}) ${flagHtml} +${puntos}`;
+            solucionContainer.innerHTML = `${ciudadActual.nombre} (${ciudadActual.pais}) ${flagHtml} ${weatherData.html} ${distanciaHtml}`;
             solucionContainer.classList.add('correcto');
             if (sonidoActivado) sonidoCorrecto.play(); // ¡Suena el acierto!
             if (esModoContrarreloj) {
                 aciertosTurno++;
             }
         } else {
-            solucionContainer.innerHTML = `${ciudadActual.nombre} (${ciudadActual.pais}) ${flagHtml}`;
+            solucionContainer.innerHTML = `${ciudadActual.nombre} (${ciudadActual.pais}) ${flagHtml} ${weatherData.html} ${distanciaHtml}`;
             solucionContainer.classList.add('incorrecto');
             if (sonidoActivado) sonidoIncorrecto.play(); // ¡Suena el error!
             // Añadimos la ciudad a la lista de falladas para el dato curioso
@@ -290,6 +305,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             const ciudadesFalladasUnicas = [...new Set(ciudadesFalladas)];
             const ciudadParaDato = ciudadesFalladasUnicas[Math.floor(Math.random() * ciudadesFalladasUnicas.length)];
 
+            // Actualizar el título del dato curioso con el nombre de la ciudad
+            const tituloDatoCurioso = datoCuriosoContainer.querySelector('h3');
+            if (tituloDatoCurioso) {
+                // Usamos textContent para evitar problemas de seguridad (aunque aquí es seguro)
+                tituloDatoCurioso.textContent = `Dato curioso sobre ${ciudadParaDato}, una de las ciudades que se te resistió`;
+            }
+
             datoCuriosoContainer.style.display = 'block'; // Mostrar el contenedor
             mapContainer.innerHTML = `<p style="text-align:center; padding-top: 20px;">Buscando datos sobre ${ciudadParaDato}...</p>`;
 
@@ -308,7 +330,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     mapContainer.innerHTML = '';
 
                     // 1. Inicializar el mapa en el div 'map-container'
-                    const map = L.map('map-container').setView([coordenadas.lat, coordenadas.lon], 13); // 13 es el nivel de zoom
+                    const map = L.map('map-container').setView([coordenadas.lat, coordenadas.lon], 4); // Zoom 4 para ver continente
 
                     // 2. Añadir la capa de mapa de OpenStreetMap
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -424,10 +446,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         const barraTiempoContainer = document.getElementById('contenedor-barra-tiempo');
         const barraTiempo = document.getElementById('barra-tiempo');
 
-        // Hacemos visible y reiniciamos la barra al iniciar el temporizador
+        // Hacemos visible y reiniciamos la barra
         barraTiempoContainer.style.display = 'block';
-        barraTiempo.style.width = '100%';
         barraTiempo.classList.remove('critico');
+        
+        // 1. Reseteamos la barra al 100% sin transición para que sea instantáneo
+        barraTiempo.style.transition = 'none';
+        barraTiempo.style.width = '100%';
+
+        // 2. Forzamos un 'reflow' para que el navegador aplique el estilo del 100%
+        // antes de aplicar la nueva transición. Es un pequeño truco de rendimiento.
+        barraTiempo.offsetHeight; 
+
+        // 3. Aplicamos la transición suave y le decimos que vaya a 0%
+        barraTiempo.style.transition = `width ${duracionInicialContrarreloj}s linear`;
+        barraTiempo.style.width = '0%';
 
         actualizarDisplayTimer(); // Muestra el tiempo inicial
         intervaloTimer = setInterval(() => {
@@ -450,11 +483,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function actualizarDisplayTimer() {
         const barraTiempo = document.getElementById('barra-tiempo');
-        contadorJuegoEl.innerHTML = `Tiempo: <span id="tiempo">${tiempoRestante}</span>`; // Cambiado id para ser más específico
-
-        // Actualizamos el ancho de la barra de tiempo
-        const porcentajeRestante = (tiempoRestante / duracionInicialContrarreloj) * 100;
-        barraTiempo.style.width = porcentajeRestante + '%';
+        contadorJuegoEl.innerHTML = `Tiempo: <span id="tiempo">${tiempoRestante}</span>`;
 
         // Lógica para el estado crítico (texto y barra)
         if (tiempoRestante <= 10 && tiempoRestante > 0) {
@@ -607,6 +636,91 @@ document.addEventListener('DOMContentLoaded', async () => {
             "Francia": "France" // Agrega más si encuentras problemas con otros nombres
         };
         return countryMap[spanishName] || spanishName; // Devuelve el nombre mapeado o el original si no se encuentra
+    }
+
+    // Función para obtener el código ISO de 2 letras del país
+    function getCountryCode(spanishCountryName) {
+        const codeMap = {
+            "España": "ES", "Portugal": "PT", "Francia": "FR", "Italia": "IT",
+            "Alemania": "DE", "Reino Unido": "GB", "EE.UU.": "US", "Estados Unidos": "US",
+            "Bélgica": "BE", "Países Bajos": "NL", "Grecia": "GR", "Rumanía": "RO",
+            "Hungría": "HU", "Argentina": "AR", "Sudáfrica": "ZA", "Dinamarca": "DK",
+            "Croacia": "HR", "Egipto": "EG", "Turquía": "TR", "Suecia": "SE",
+            "Finlandia": "FI", "Japón": "JP", "China": "CN", "Rusia": "RU",
+            "Emiratos Árabes Unidos": "AE", "Perú": "PE", "Jordania": "JO",
+            "República Checa": "CZ", "Ecuador": "EC", "Islandia": "IS", "Brasil": "BR",
+            "Corea del Sur": "KR", "Australia": "AU", "Singapur": "SG", "Austria": "AT",
+            "India": "IN", "México": "MX", "Irlanda": "IE", "Malta": "MT",
+            "Noruega": "NO", "Camboya": "KH", "Myanmar": "MM", "Tailandia": "TH",
+            "Nepal": "NP", "Laos": "LA", "Eslovenia": "SI", "Marruecos": "MA",
+            "Uzbekistán": "UZ", "Tanzania": "TZ", "Mali": "ML", "Ciudad del Vaticano": "VA"
+            // Añadir más si es necesario
+        };
+        return codeMap[spanishCountryName];
+    }
+
+    // Función para obtener el clima de la ciudad
+    async function fetchWeather(cityName, countryName) {
+        if (!OPENWEATHER_API_KEY || OPENWEATHER_API_KEY === 'TU_API_KEY_AQUI') {
+            console.warn('Falta la API Key de OpenWeatherMap en juego.js');
+            return { html: '', coords: null }; // Devolvemos un objeto vacío
+        }
+        const countryCode = getCountryCode(countryName);
+        const query = countryCode ? `${cityName},${countryCode}` : cityName; // Usamos el código de país si lo tenemos
+
+        try {
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(query)}&appid=${OPENWEATHER_API_KEY}&units=metric&lang=es`;
+            const response = await fetch(url);
+            if (response.ok) {
+                const data = await response.json();
+                const temp = Math.round(data.main.temp);
+                const weatherHtml = `<span title="${data.weather[0].description}">🌡️ ${temp}°C</span>`;
+                return { html: weatherHtml, coords: data.coord };
+            }
+            // Si la respuesta no es 'ok', lo registramos en la consola para depuración
+            const errorData = await response.json();
+            console.warn(`OpenWeatherMap no encontró la ciudad "${cityName}" o hubo un error:`, errorData.message);
+            return { html: '', coords: null }; 
+
+        } catch (error) {
+            console.error(`Error al obtener el clima para ${cityName}:`, error);
+            return { html: '', coords: null };
+        }
+    }
+
+    // Función para solicitar la ubicación del usuario
+    function solicitarUbicacionUsuario() {
+        if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    userLocation = {
+                        latitude: position.coords.latitude,
+                        longitude: position.coords.longitude
+                    };
+                    console.log('Ubicación del usuario obtenida:', userLocation);
+                },
+                (error) => {
+                    console.warn('El usuario no permitió el acceso a la ubicación:', error.message);
+                    // No es un error crítico, el juego puede continuar sin esta función.
+                }
+            );
+        } else {
+            console.warn('La geolocalización no está disponible en este navegador.');
+        }
+    }
+
+    // Función para calcular la distancia entre dos puntos (fórmula de Haversine)
+    function calcularDistancia(lat1, lon1, lat2, lon2) {
+        const R = 6371; // Radio de la Tierra en km
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLon = (lon2 - lon1) * Math.PI / 180;
+        const a = 
+            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        const distancia = R * c;
+        return distancia;
     }
 
     function actualizarTablaResumen(datos) {
