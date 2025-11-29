@@ -158,11 +158,12 @@
         const nombre = input.value.trim();
 
         if (nombre) {
-            let jugadores = JSON.parse(localStorage.getItem('jugadores')) || [];
-            // ¡CORRECCIÓN CLAVE! Aseguramos que solo trabajamos con jugadores válidos antes de la comprobación.
-            jugadores = jugadores.filter(j => 
-                typeof j === 'object' && j !== null && typeof j.nombre === 'string'
-            );
+            let jugadores = [];
+            try {
+                // Aseguramos que jugadores sea siempre un array, incluso si localStorage está corrupto.
+                jugadores = JSON.parse(localStorage.getItem('jugadores')) || [];
+                if (!Array.isArray(jugadores)) jugadores = [];
+            } catch (e) { /* Si hay un error, jugadores ya es un array vacío */ }
 
             // Evitar duplicados
             if (jugadores.some(j => j.nombre.toLowerCase() === nombre.toLowerCase())) { // Esta es la línea 164
